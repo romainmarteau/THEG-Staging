@@ -116,7 +116,7 @@
         <input type="text" id="farm" name="farm" required />
 
         <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" />
+        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" />
 
         <label for="role">Your Role</label>
         <select id="role" name="role">
@@ -134,6 +134,7 @@
     </div>
   </main>
 
+  <!-- Google Apps Script submission -->
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwKG2rvpQj-uxsYPEQvrEBfOz25p9OJ2uzXPUbiVy3p6tHoUGwQhynTNCajBO-ade8/exec';
     const form = document.getElementById('intake-form');
@@ -150,23 +151,8 @@
     });
   </script>
 
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9F1KRnq0rQ2m9vmrjrxLKRolAkqzO9o0&libraries=places"
-    async defer>
-  </script>
-
+  <!-- Phone number formatting -->
   <script>
-    function initAutocomplete() {
-      const input = document.getElementById("address");
-      if (input) {
-        new google.maps.places.Autocomplete(input, {
-          types: ['geocode'],
-          componentRestrictions: { country: "us" }
-        });
-      }
-    }
-    window.initAutocomplete = initAutocomplete;
-  </script>
+    const phoneInput = document.getElementById('phone');
 
-</body>
-</html>
+    phone
