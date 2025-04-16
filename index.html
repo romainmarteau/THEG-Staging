@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Hamptons Equestrian Group</title>
   <link rel="icon" href="favicon.png" type="image/png">
   <meta property="og:title" content="The Hamptons Equestrian Group">
@@ -49,106 +49,77 @@
     main {
       flex: 1;
       padding: 40px 20px;
-      background-color: #f2f2f2;
     }
 
-   .form-container {
-  max-width: 500px;
-  margin: 0 auto;
-  background-color: white;
-  padding: 20px 25px; 
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-form input,
-form select,
-form button {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  box-sizing: border-box;
-}
-
-
-    button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
+    .form-container {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    button:hover {
-      background-color: #45a049;
-    }
-
-    footer {
-      background-color: #444;
-      color: white;
-      padding: 30px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    form input, form select, form button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
       font-size: 16px;
     }
 
-    footer .column {
-      max-width: 45%;
-      margin-bottom: 20px;
-    }
-
-    footer h4 {
-      margin: 0 0 10px;
-    }
-
-    footer p, footer a {
-      margin: 0;
+    form button {
+      background-color: #4CAF50;
       color: white;
-      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
-    footer a:hover {
-      text-decoration: underline;
+    form button:hover {
+      background-color: #45a049;
     }
 
-    @media (max-width: 768px) {
-      footer {
-        flex-direction: column;
-        text-align: center;
-      }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
 
-      footer .column {
-        max-width: 100%;
-      }
+    .success-message {
+      text-align: center;
+      color: green;
+      font-weight: bold;
     }
   </style>
 </head>
 
-<body>
+<body onload="initAutocomplete()">
+
   <header>
     <div class="staging-banner">STAGING</div>
   </header>
 
   <main>
     <div class="form-container">
-      <form id="equestrianForm">
+      <form id="intake-form">
         <label for="name">Name *</label>
-        <input type="text" name="name" required />
+        <input type="text" id="name" name="name" required />
 
         <label for="email">Email *</label>
-        <input type="email" name="email" required />
+        <input type="email" id="email" name="email" required />
 
         <label for="address">Address (use Hamptons Address if possible) *</label>
-        <input type="text" name="address" id="autocomplete" required placeholder="Start typing your address..." />
+        <input type="text" id="address" name="address" placeholder="Start typing your address..." required />
 
-        <label for="affiliation">Farm/Business Affiliated with *</label>
-        <input type="text" name="affiliation" required />
+        <label for="farm">Farm/Business Affiliated with *</label>
+        <input type="text" id="farm" name="farm" required />
 
         <label for="phone">Phone Number</label>
-        <input type="tel" name="phone" />
+        <input type="tel" id="phone" name="phone" />
 
         <label for="role">Your Role</label>
-        <select name="role">
+        <select id="role" name="role">
           <option value="">-- Please select --</option>
           <option value="Farm Owner">Farm Owner</option>
           <option value="Rider/Trainer">Rider/Trainer</option>
@@ -158,58 +129,44 @@ form button {
         </select>
 
         <button type="submit">Join</button>
+        <p class="success-message" style="display: none;">Thank you! Your response has been recorded.</p>
       </form>
     </div>
   </main>
 
-  <footer>
-    <div class="column">
-      <h4>The Hamptons Equestrian Group</h4>
-      <p>A coalition of equestrian property owners, professionals, and enthusiasts dedicated to preserving, protecting, and promoting the horse industry on the East End.</p>
-    </div>
-    <div class="column">
-      <h4>Contact Us</h4>
-      <p>Email: <a href="mailto:info@hamptonsequestrian.org">info@hamptonsequestrian.org</a></p>
-    </div>
-    <div style="width: 100%; text-align: center; margin-top: 20px;">
-      <p>© 2025 The Hamptons Equestrian Group. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- JS for form submission -->
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwKG2rvpQj-uxsYPEQvrEBfOz25p9OJ2uzXPUbiVy3p6tHoUGwQhynTNCajBO-ade8/exec';
-    const form = document.getElementById('equestrianForm');
+    const form = document.getElementById('intake-form');
+    const successMessage = document.querySelector('.success-message');
 
     form.addEventListener('submit', e => {
       e.preventDefault();
-      const formData = new FormData(form);
-
-      fetch(scriptURL, {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => {
-        alert('Thank you for joining!');
-        form.reset();
-      })
-      .catch(error => {
-        alert('Error submitting form: ' + error.message);
-      });
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(() => {
+          successMessage.style.display = 'block';
+          form.reset();
+        })
+        .catch(error => alert('Error!', error.message));
     });
   </script>
 
-  <!-- Google Places API Autocomplete -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY_HERE&libraries=places&callback=initAutocomplete" async defer></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9F1KRnq0rQ2m9vmrjrxLKRolAkqzO9o0&libraries=places"
+    async defer>
+  </script>
+
   <script>
     function initAutocomplete() {
-      const input = document.getElementById('autocomplete');
-      new google.maps.places.Autocomplete(input, {
-        types: ['address'],
-        componentRestrictions: { country: 'us' },
-        fields: ['formatted_address']
-      });
+      const input = document.getElementById("address");
+      if (input) {
+        new google.maps.places.Autocomplete(input, {
+          types: ['geocode'],
+          componentRestrictions: { country: "us" }
+        });
+      }
     }
+    window.initAutocomplete = initAutocomplete;
   </script>
+
 </body>
 </html>
