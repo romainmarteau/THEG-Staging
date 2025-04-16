@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Hamptons Equestrian Group</title>
-<link rel="icon" href="favicon.png" type="image/png">
-<meta property="og:title" content="The Hamptons Equestrian Group">
-<meta property="og:description" content="A coalition supporting equestrian-friendly land use and preservation on the East End.">
-<meta property="og:image" content="https://hamptonsequestrian.org/preview.jpg">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://hamptonequestrian.org">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta property="og:title" content="The Hamptons Equestrian Group">
+  <meta property="og:description" content="A coalition supporting equestrian-friendly land use and preservation on the East End.">
+  <meta property="og:image" content="https://hamptonsequestrian.org/preview.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hamptonequestrian.org">
+
   <style>
     body {
       margin: 0;
@@ -22,11 +23,27 @@
     }
 
     header {
+      position: relative;
       background-image: url('preview.jpg');
       background-size: cover;
       background-position: center;
       height: 300px;
       width: 100%;
+    }
+
+    .staging-banner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 0, 0, 0.8);
+      color: white;
+      font-size: 48px;
+      font-weight: bold;
+      padding: 10px 30px;
+      border-radius: 8px;
+      z-index: 10;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
     main {
@@ -94,14 +111,16 @@
 </head>
 <body>
 
-  <header></header>
+  <header>
+    <div class="staging-banner">STAGING</div>
+  </header>
 
   <main>
     <div class="form-container">
-     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScSjxgzSEFWTY6bYnmpYjOh3IAzfnMxtpj5FNohlJ_ehRT1Ag/viewform?embedded=true" 
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScSjxgzSEFWTY6bYnmpYjOh3IAzfnMxtpj5FNohlJ_ehRT1Ag/viewform?embedded=true" 
         width="100%" height="1400" frameborder="0" marginheight="0" marginwidth="0">
-  Loading…
-</iframe>
+        Loading…
+      </iframe>
     </div>
   </main>
 
