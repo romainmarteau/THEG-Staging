@@ -55,18 +55,21 @@
       max-width: 500px;
       margin: 0 auto;
       background-color: white;
-      padding: 20px 30px;
+      padding: 20px 30px 20px 30px; /* Equal L/R padding */
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    form input, form select, form button {
+    form input,
+    form select,
+    form button {
       width: 100%;
       padding: 10px;
       margin: 10px 0;
       border: 1px solid #ccc;
       border-radius: 4px;
       font-size: 16px;
+      box-sizing: border-box; /* Prevents input overflow */
     }
 
     form button {
@@ -155,4 +158,37 @@
   <script>
     const phoneInput = document.getElementById('phone');
 
-    phone
+    phoneInput.addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 10) value = value.slice(0, 10);
+
+      const area = value.slice(0, 3);
+      const prefix = value.slice(3, 6);
+      const line = value.slice(6, 10);
+
+      let formatted = '';
+      if (area) formatted = `(${area}`;
+      if (prefix) formatted += `) ${prefix}`;
+      if (line) formatted += `-${line}`;
+
+      e.target.value = formatted;
+    });
+  </script>
+
+  <!-- Google Maps JavaScript API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9F1KRnq0rQ2m9vmrjrxLKRolAkqzO9o0&libraries=places&callback=initAutocomplete" async defer></script>
+  <script>
+    function initAutocomplete() {
+      const input = document.getElementById("address");
+      if (input) {
+        new google.maps.places.Autocomplete(input, {
+          types: ['geocode'],
+          componentRestrictions: { country: "us" }
+        });
+      }
+    }
+    window.initAutocomplete = initAutocomplete;
+  </script>
+
+</body>
+</html>
