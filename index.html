@@ -1,48 +1,197 @@
-const express = require('express');
-const { google } = require('googleapis');
-const bodyParser = require('body-parser');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Hamptons Equestrian Group</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta property="og:title" content="The Hamptons Equestrian Group">
+  <meta property="og:description" content="A coalition supporting equestrian-friendly land use and preservation on the East End.">
+  <meta property="og:image" content="https://hamptonsequestrian.org/preview.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hamptonequestrian.org">
 
-const app = express();
-app.use(bodyParser.json());
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-// Add CORS middleware
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://romainmarteau.github.io');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  if (req.method === 'OPTIONS') {
-    return res.status(204).send('');
-  }
-  next();
-});
+    header {
+      position: relative;
+      background-image: url('preview.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      width: 100%;
+    }
 
-const SHEET_ID = '1voV0RZbjmSHtegsP4ci65EyKx1_EoHABAeqPJ8sozOw'; // Your actual sheet ID
+    .staging-banner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 0, 0, 0.8);
+      color: white;
+      font-size: 48px;
+      font-weight: bold;
+      padding: 10px 30px;
+      border-radius: 8px;
+      z-index: 10;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
 
-app.post('/', async (req, res) => {
-  try {
-    const auth = new google.auth.GoogleAuth({
-      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    main {
+      flex: 1;
+      padding: 40px 20px;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    form input,
+    form select,
+    form button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    form button {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #45a049;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    .success-message {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body onload="initAutocomplete()">
+
+  <header>
+    <div class="staging-banner">STAGING</div>
+  </header>
+
+  <main>
+    <div class="form-container">
+      <form id="intake-form">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="address">Address (use Hamptons Address if possible) *</label>
+        <input type="text" id="address" name="address" placeholder="Start typing your address..." required />
+
+        <label for="farm">Farm/Business Affiliated with *</label>
+        <input type="text" id="farm" name="farm" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" />
+
+        <label for="role">Your Role</label>
+        <select id="role" name="role">
+          <option value="">-- Please select --</option>
+          <option value="Farm Owner">Farm Owner</option>
+          <option value="Rider/Trainer">Rider/Trainer</option>
+          <option value="Vet/Blacksmith/Tackshop">Vet/Blacksmith/Tackshop</option>
+          <option value="Horse Enthusiast">Horse Enthusiast</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <button type="submit">Join</button>
+        <p class="success-message" style="display: none;">Thank you! Your response has been recorded.</p>
+      </form>
+    </div>
+  </main>
+
+  <!-- Google Apps Script submission -->
+  <script>
+    const scriptURL = 'https://form-receiver-staging-612708069854.us-central1.run.app';
+    const form = document.getElementById('intake-form');
+    const successMessage = document.querySelector('.success-message');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, {
+        method: 'POST',
+        body: new FormData(form)
+      })
+      .then(response => {
+        if (response.ok) {
+          successMessage.style.display = 'block';
+          form.reset();
+        } else {
+          return response.text().then(text => { throw new Error(text) });
+        }
+      })
+      .catch(error => alert('Error!\n' + error.message));
     });
+  </script>
 
-    const client = await auth.getClient();
-    const sheets = google.sheets({ version: 'v4', auth: client });
-
-    const { name, email, address, farm, phone, role } = req.body;
-
-    await sheets.spreadsheets.values.append({
-      spreadsheetId: SHEET_ID,
-      range: 'Sheet1!A:F',
-      valueInputOption: 'RAW',
-      requestBody: {
-        values: [[name, email, address, farm, phone, role]],
-      },
+  <!-- Phone number formatting -->
+  <script>
+    const phoneInput = document.getElementById('phone');
+    phoneInput.addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 10) value = value.slice(0, 10);
+      const area = value.slice(0, 3);
+      const prefix = value.slice(3, 6);
+      const line = value.slice(6, 10);
+      let formatted = '';
+      if (area) formatted = `(${area}`;
+      if (prefix) formatted += `) ${prefix}`;
+      if (line) formatted += `-${line}`;
+      e.target.value = formatted;
     });
+  </script>
 
-    res.status(200).send({ result: 'success' });
-  } catch (error) {
-    console.error('Error appending to sheet:', error);
-    res.status(500).send({ error: 'Failed to submit form' });
-  }
-});
+  <!-- Google Maps JavaScript API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9F1KRnq0rQ2m9vmrjrxLKRolAkqzO9o0&libraries=places&callback=initAutocomplete" async defer></script>
+  <script>
+    function initAutocomplete() {
+      const input = document.getElementById("address");
+      if (input) {
+        new google.maps.places.Autocomplete(input, {
+          types: ['geocode'],
+          componentRestrictions: { country: "us" }
+        });
+      }
+    }
+    window.initAutocomplete = initAutocomplete;
+  </script>
 
-module.exports = app;
+</body>
+</html>
