@@ -7,9 +7,10 @@
   <link rel="icon" href="favicon.png" type="image/png">
   <meta property="og:title" content="The Hamptons Equestrian Group">
   <meta property="og:description" content="A coalition supporting equestrian-friendly land use and preservation on the East End.">
-  <meta property="og:image" content="https://hamptonsequestrian.org/preview.jpg">
+  <meta property="og:image" content="https://romainmarteau.github.io/THEG-Staging/assets/preview.jpg">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://hamptonequestrian.org">
+  <meta property="og:url" content="https://romainmarteau.github.io/THEG-Staging/">
+
   <style>
     html {
       scroll-behavior: smooth;
@@ -24,7 +25,7 @@
       min-height: 100vh;
     }
     header {
-      background-image: url('preview.jpg');
+      background-image: url('assets/preview.jpg');
       background-size: cover;
       background-position: center;
       height: 400px;
@@ -126,6 +127,7 @@
   <div id="join" class="form-container">
     <form id="intake-form">
       <h2>Join the Hamptons Equestrian Group</h2>
+
       <label for="name">Name *</label>
       <input type="text" id="name" name="name" required />
 
@@ -156,6 +158,7 @@
     </form>
   </div>
 
+  <!-- Form Submission Script -->
   <script>
     const scriptURL = 'https://form-receiver-staging-612708069854.us-central1.run.app';
     const form = document.getElementById('intake-form');
@@ -179,6 +182,7 @@
     });
   </script>
 
+  <!-- Phone Formatting -->
   <script>
     const phoneInput = document.getElementById('phone');
     phoneInput.addEventListener('input', function (e) {
@@ -195,6 +199,7 @@
     });
   </script>
 
+  <!-- Google Maps Autocomplete -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9F1KRnq0rQ2m9vmrjrxLKRolAkqzO9o0&libraries=places&callback=initAutocomplete" async defer></script>
   <script>
     function initAutocomplete() {
