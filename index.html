@@ -4,241 +4,196 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Hamptons Equestrian Group</title>
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="favicon.png" type="image/png" />
   <meta property="og:title" content="The Hamptons Equestrian Group">
-  <meta property="og:description" content="A coalition supporting equestrian-friendly land use and preservation on the East End.">
-  <meta property="og:image" content="https://romainmarteau.github.io/THEG-Staging/preview.jpg">
+  <meta property="og:description" content="A coalition supporting equestrian-friendly land use and preservation on the East End." />
+  <meta property="og:image" content="preview.jpg">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://romainmarteau.github.io/THEG-Staging/">
-
+  <meta property="og:url" content="https://hamptonsequestrian.org">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f8f5f0;
+      color: #333;
+      line-height: 1.6;
     }
-
     header {
-      position: relative;
       background-image: url('preview.jpg');
       background-size: cover;
       background-position: center;
-      height: 400px;
-      color: white;
+      height: 100vh;
+      position: relative;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 0 20px;
+      color: white;
     }
-
     header h1 {
-      font-size: 3rem;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      font-size: 2.5rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      border-radius: 10px;
     }
-
-    .staging-banner {
+    header nav {
       position: absolute;
       top: 20px;
-      left: 20px;
-      background-color: rgba(255, 0, 0, 0.85);
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-      padding: 8px 16px;
-      border-radius: 6px;
-      z-index: 10;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      right: 40px;
+      display: flex;
+      gap: 20px;
+      font-size: 0.9rem;
     }
-
-    .section {
-      padding: 60px 20px;
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      margin-top: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    section {
+      padding: 4rem 1rem;
+      max-width: 1000px;
+      margin: 0 auto;
     }
-
-    .section h2 {
-      color: #2c3e50;
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
     }
-
-    .cta-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      justify-items: center;
+      text-align: center;
+    }
+    .icon-grid img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 0.5rem;
+    }
+    .form-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+    .form-container input,
+    .form-container select,
+    .form-container button {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+    button {
       background-color: #4CAF50;
       color: white;
       border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      text-decoration: none;
-    }
-
-    .form-container {
-      max-width: 500px;
-      margin: 60px auto;
-      background-color: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    form input, form select, form button {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 16px;
-    }
-
-    form button {
-      background-color: #4CAF50;
-      color: white;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
-
-    form button:hover {
+    button:hover {
       background-color: #45a049;
     }
-
-    .success-message {
+    footer {
+      padding: 2rem;
+      background: #222;
+      color: #ccc;
       text-align: center;
-      color: green;
-      font-weight: bold;
     }
   </style>
 </head>
-<body onload="initAutocomplete()">
+<body>
   <header>
-    <div class="staging-banner">STAGING</div>
+    <nav>
+      <a href="#who">Who</a>
+      <a href="#why">Why</a>
+      <a href="#what">What</a>
+      <a href="#join">How</a>
+    </nav>
     <h1>Uniting the Equestrian Voice of the East End</h1>
+    <a href="#join"><button>Join the Group</button></a>
   </header>
 
-  <div class="section">
+  <section id="who">
     <h2>Who We Are</h2>
-    <p>The Hamptons Equestrian Group is a coalition of equestrian property owners, professionals, riders, and enthusiasts who call the East End home. We’ve come together to protect what we love — our horses, our farms, and the future of our equestrian community.</p>
-    <a href="#join" class="cta-button">Join the Group</a>
-  </div>
+    <img src="Who_We_Are.png" alt="Who We Are Diagram" style="width:100%; max-width:600px; display:block; margin:0 auto;">
+  </section>
 
-  <div class="section">
+  <section id="why">
     <h2>Why We Exist</h2>
-    <p>In the past 20–30 years, many local horse farms have shut down — pushed out by development pressures, zoning restrictions, and lack of public support. As individuals, it’s hard to push back. As a group, we have power.</p>
-    <a href="#join" class="cta-button">Make a Difference</a>
-  </div>
+    <p style="text-align:center; max-width:600px; margin:0 auto;">Many local horse farms have shut down due to development pressure, zoning restrictions, and lack of public support. As a group, we are stronger.</p>
+    <ul style="max-width:600px; margin:1rem auto;">
+      <li>Raise awareness about the importance of the horse industry</li>
+      <li>Advocate for equestrian-friendly policies</li>
+      <li>Promote open space and agricultural land preservation</li>
+      <li>Support each other and share resources</li>
+    </ul>
+    <img src="horse_picture.jpg" alt="Horse in field" style="width:100%; max-width:400px; display:block; margin:2rem auto;">
+  </section>
 
-  <div class="section">
+  <section id="what">
     <h2>What We Do</h2>
-    <p>We advocate for equestrian-friendly policies, raise awareness about the horse industry’s value, promote land preservation, and build a strong support network. We share resources, highlight local events, and create visibility for our community’s needs.</p>
-    <a href="#join" class="cta-button">Get Involved</a>
-  </div>
+    <div class="icon-grid">
+      <div><img src="icon_people.png" alt="People">Connection</div>
+      <div><img src="icon_barn.png" alt="Barn">Support Farms</div>
+      <div><img src="icon_calendar.png" alt="Calendar">Coordinate</div>
+      <div><img src="icon_direction.png" alt="Sign">Navigate Land Use</div>
+    </div>
+  </section>
 
-  <div class="section">
-    <h2>Our Vision</h2>
-    <p>We envision a Hamptons where horse farms thrive, open space is protected, and equestrian traditions endure. We want to ensure that horses remain a vital part of East End life for generations to come.</p>
-    <a href="#join" class="cta-button">Support the Vision</a>
-  </div>
+  <section id="join">
+    <h2>Join the Hamptons Equestrian Group</h2>
+    <div class="form-container">
+      <form id="intake-form">
+        <input type="text" name="name" placeholder="--John Schmidt--" required>
+        <input type="email" name="email" placeholder="--John.Schmidt@gmail.com--" required>
+        <input type="text" name="address" placeholder="--123 Main Street, Southampton NY--" required>
+        <input type="tel" name="phone" placeholder="--(123) 456-7890--">
+        <input type="text" name="farm" placeholder="--Please Select--" required>
+        <select name="role">
+          <option value="">-- Please Select --</option>
+          <option value="Farm Owner">Farm Owner</option>
+          <option value="Rider/Trainer">Rider/Trainer</option>
+          <option value="Vet/Blacksmith/Tackshop">Vet/Blacksmith/Tackshop</option>
+          <option value="Horse Enthusiast">Horse Enthusiast</option>
+          <option value="Other">Other</option>
+        </select>
+        <button type="submit">Join the Group</button>
+        <p class="success-message" style="text-align:center; color:green; display:none;">Thank you! Your response has been recorded.</p>
+      </form>
+    </div>
+  </section>
 
-  <div id="join" class="form-container">
-    <form id="intake-form">
-      <h2>Join the Hamptons Equestrian Group</h2>
+  <footer>
+    <p>The Hamptons Equestrian Group</p>
+    <p>A coalition of equestrians, property owners, professionals and enthusiasts dedicated to promoting the horse industry on the East End</p>
+    <p>Contact: <a href="mailto:info@hamptonsequestrian.org">info@hamptonsequestrian.org</a></p>
+  </footer>
 
-      <label for="name">Name *</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="email">Email *</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="address">Address (Hamptons preferred) *</label>
-      <input type="text" id="address" name="address" required />
-
-      <label for="farm">Farm/Business Affiliation *</label>
-      <input type="text" id="farm" name="farm" required />
-
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" />
-
-      <label for="role">Your Role</label>
-      <select id="role" name="role">
-        <option value="">-- Please select --</option>
-        <option value="Farm Owner">Farm Owner</option>
-        <option value="Rider/Trainer">Rider/Trainer</option>
-        <option value="Vet/Blacksmith/Tackshop">Vet/Blacksmith/Tackshop</option>
-        <option value="Horse Enthusiast">Horse Enthusiast</option>
-        <option value="Other">Other</option>
-      </select>
-
-      <button type="submit">Join</button>
-      <p class="success-message" style="display: none;">Thank you! Your response has been recorded.</p>
-    </form>
-  </div>
-
-  <!-- Form Submission Script -->
   <script>
-    const scriptURL = 'https://form-receiver-staging-612708069854.us-central1.run.app';
     const form = document.getElementById('intake-form');
     const successMessage = document.querySelector('.success-message');
+    const scriptURL = 'https://form-receiver-staging-612708069854.us-central1.run.app';
 
     form.addEventListener('submit', e => {
       e.preventDefault();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
       fetch(scriptURL, {
         method: 'POST',
-        body: new FormData(form)
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
       })
       .then(response => {
         if (response.ok) {
           successMessage.style.display = 'block';
           form.reset();
         } else {
-          return response.text().then(text => { throw new Error(text) });
+          throw new Error('Network response was not ok.');
         }
       })
       .catch(error => alert('Error!\n' + error.message));
     });
-  </script>
-
-  <!-- Phone Formatting -->
-  <script>
-    const phoneInput = document.getElementById('phone');
-    phoneInput.addEventListener('input', function (e) {
-      let value = e.target.value.replace(/\D/g, '');
-      if (value.length > 10) value = value.slice(0, 10);
-      const area = value.slice(0, 3);
-      const prefix = value.slice(3, 6);
-      const line = value.slice(6, 10);
-      let formatted = '';
-      if (area) formatted = `(${area}`;
-      if (prefix) formatted += `) ${prefix}`;
-      if (line) formatted += `-${line}`;
-      e.target.value = formatted;
-    });
-  </script>
-
-  <!-- Google Maps Autocomplete -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9F1KRnq0rQ2m9vmrjrxLKRolAkqzO9o0&libraries=places&callback=initAutocomplete" async defer></script>
-  <script>
-    function initAutocomplete() {
-      const input = document.getElementById("address");
-      if (input) {
-        new google.maps.places.Autocomplete(input, {
-          types: ['geocode'],
-          componentRestrictions: { country: "us" }
-        });
-      }
-    }
-    window.initAutocomplete = initAutocomplete;
   </script>
 </body>
 </html>
