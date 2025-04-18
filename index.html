@@ -24,42 +24,57 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    header {
-      position: relative;
-      background: url('preview.jpg') no-repeat center center;
-      background-size: cover;
-      height: calc(100vh - 4px);
-      color: white;
+    .fixed-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 60px;
+      z-index: 1000;
     }
 
-    nav {
-      position: absolute;
-      top: 40px;
-      right: 60px;
+    .fixed-header img {
+      width: 60px;
+      height: auto;
+    }
+
+    .fixed-header nav {
       display: flex;
       gap: 40px;
       font-weight: 500;
       font-size: 20px;
-      z-index: 2;
     }
 
-    nav a {
+    .fixed-header nav a {
       color: white;
       text-decoration: none;
       transition: opacity 0.3s ease;
     }
 
-    nav a:hover {
+    .fixed-header nav a:hover {
       opacity: 0.8;
     }
 
+    header {
+      background: url('preview.jpg') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 60px;
+      box-sizing: border-box;
+    }
+
     .header-content {
-      position: absolute;
-      top: 50%;
-      left: 60px;
-      transform: translateY(-50%);
+      margin-top: 100px;
       max-width: 700px;
-      z-index: 2;
     }
 
     .header-content h2 {
@@ -95,36 +110,27 @@
       bottom: 40px;
       right: 60px;
       width: 130px;
-      z-index: 2;
-    }
-
-    .hero-logo {
-      position: absolute;
-      top: 30px;
-      left: 60px;
-      width: 60px;
-      height: auto;
-      z-index: 3;
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <img src="small_logo_white.png" alt="logo" class="hero-logo" />
+  <div class="fixed-header">
+    <img src="small_logo_white.png" alt="Logo">
     <nav>
       <a href="#who">Who</a>
       <a href="#why">Why</a>
       <a href="#what">What</a>
       <a href="#how">How</a>
     </nav>
+  </div>
 
+  <header>
     <div class="header-content">
       <h2>Our Mission</h2>
       <h1>Uniting the Equestrian<br>Voice of the East End</h1>
       <a href="#join" class="cta-button">Join the Group</a>
     </div>
-
     <img src="logo_white.png" alt="White Logo" class="logo">
   </header>
 </body>
