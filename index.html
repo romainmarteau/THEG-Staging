@@ -5,96 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Hamptons Equestrian Group</title>
   <link rel="icon" href="favicon.png" type="image/png">
-  <meta property="og:title" content="The Hamptons Equestrian Group">
-  <meta property="og:description" content="A coalition supporting equestrian-friendly land use and preservation on the East End.">
-  <meta property="og:image" content="preview.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://hamptonequestrian.org">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet" />
+
   <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
+    body, html {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #fefcf9;
-      color: #333;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
     }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    .hero {
-      background-image: url('preview.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
+
+    header {
       position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      background: url('preview.jpg') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
       color: white;
     }
-    .nav {
+
+    nav {
+      position: absolute;
+      top: 40px;
+      right: 60px;
       display: flex;
-      justify-content: flex-end;
-      padding: 40px;
       gap: 40px;
-      font-weight: bold;
-    }
-    .nav a {
-      color: white;
+      font-weight: 500; /* Poppins Medium */
       font-size: 18px;
     }
-    .hero-content {
-      padding: 0 60px 80px 60px;
-    }
-    .hero h2 {
-      font-size: 20px;
-      font-weight: 400;
-      margin: 0;
-      letter-spacing: 2px;
-    }
-    .hero h1 {
-      font-size: 48px;
-      font-weight: bold;
-      margin: 20px 0;
-      letter-spacing: 2px;
-    }
-    .hero .join-button {
-      display: inline-block;
-      background-color: #4d6f52;
+
+    nav a {
       color: white;
-      padding: 15px 32px;
-      font-weight: bold;
-      border-radius: 10px;
-      margin-top: 30px;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
     }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    .header-content {
+      position: absolute;
+      top: 50%;
+      left: 60px;
+      transform: translateY(-50%);
+      max-width: 700px;
+    }
+
+    .header-content h2 {
+      font-size: 24px;
+      font-weight: 700; /* Poppins Bold */
+      margin-bottom: 20px;
+    }
+
+    .header-content h1 {
+      font-size: 48px;
+      font-weight: 700; /* Poppins Bold */
+      line-height: 1.3;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      background-color: #4a6e57;
+      padding: 16px 32px;
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
     .logo {
       position: absolute;
-      right: 40px;
       bottom: 40px;
-      width: 120px;
+      right: 60px;
+      width: 130px;
     }
   </style>
 </head>
+
 <body>
-  <section class="hero">
-    <nav class="nav">
+
+  <header>
+    <nav>
       <a href="#who">Who</a>
       <a href="#why">Why</a>
       <a href="#what">What</a>
       <a href="#how">How</a>
     </nav>
-    <div class="hero-content">
+
+    <div class="header-content">
       <h2>Our Mission</h2>
       <h1>Uniting the Equestrian<br>Voice of the East End</h1>
-      <a href="#join" class="join-button">Join the Group</a>
+      <a href="#join" class="cta-button">Join the Group</a>
     </div>
-    <img class="logo" src="logo_white.png" alt="Hamptons Equestrian Group Logo">
-  </section>
 
-  <!-- ADDITIONAL SECTIONS will follow here (Who We Are, Why We Exist, What We Do, etc.) -->
+    <img src="logo_white.png" alt="White Logo" class="logo">
+  </header>
 
 </body>
 </html>
