@@ -69,7 +69,7 @@
       justify-content: flex-start;
       align-items: flex-start;
       padding-left: 60px;
-      padding-top: 160px;
+      padding-top: 150px;
       box-sizing: border-box;
     }
 
@@ -100,7 +100,7 @@
       color: white;
       border: none;
       margin-left: 100px;
-      margin-top: 60px;
+      margin-top: 70px;
       border-radius: 8px;
       text-decoration: none;
       display: inline-block;
@@ -111,6 +111,25 @@
       bottom: 40px;
       right: 60px;
       width: 130px;
+    }
+
+    @media (max-width: 768px) {
+      .fixed-header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .fixed-header nav {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 16px;
+      }
+
+      .cta-button {
+        margin-left: 0;
+        margin-top: 30px;
+      }
     }
   </style>
 </head>
