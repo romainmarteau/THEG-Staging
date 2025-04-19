@@ -25,18 +25,25 @@
       background-size: cover;
     }
 
+    /* Header Default Style */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.1);
+      background: rgba(0, 0, 0, 0.1); /* Light transparent background */
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 20px 30px;
       z-index: 1000;
       box-sizing: border-box;
+      transition: background 0.3s ease; /* Smooth transition for background changes */
+    }
+
+    /* Header Style When Scrolled */
+    header.scrolled {
+      background: rgba(0, 0, 0, 0.7); /* Darker, more opaque background */
     }
 
     header img {
@@ -105,13 +112,13 @@
       border-radius: 8px;
       text-decoration: none;
       display: inline-block;
-      width: auto; /* Ensure button adjusts to content */
+      width: auto;
       text-align: center;
     }
 
     #who {
       background-color: #F5F2EA;
-      padding: 80px 20px 20px; /* Reduced bottom padding */
+      padding: 80px 20px 20px;
       text-align: center;
     }
 
@@ -125,13 +132,13 @@
 
     #why {
       background-color: #fff;
-      padding: 50px 30px 80px; /* Reduced top padding */
+      padding: 50px 30px 80px;
       display: flex;
       flex-wrap: nowrap;
       align-items: flex-start;
       justify-content: center;
       gap: 40px;
-      scroll-margin-top: 95px; /* Adjusted offset for the header */
+      scroll-margin-top: 95px;
     }
 
     #why .why-text {
@@ -142,16 +149,6 @@
       justify-content: space-between;
     }
 
-    #why .why-text h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    #why .why-text h3 {
-      font-weight: 500;
-      margin-top: 0;
-    }
-
     #why img {
       flex: 1;
       max-width: 460px;
@@ -160,39 +157,30 @@
       align-self: flex-start;
     }
 
-    /* Ensure CTA Button in #why matches the size of the one in #who */
-    #why .cta-button {
-      width: auto; /* Adjust to content size */
-      padding: 16px 32px; /* Keep consistent padding */
-      text-align: center;
-      align-self: flex-start; /* Align to the left */
-      margin-top: 40px;
-    }
-
     @media (max-width: 768px) {
       .hero-section {
         padding: 150px 20px 0 20px;
       }
 
       #why {
-        flex-direction: column; /* Stack content vertically on small screens */
+        flex-direction: column;
         align-items: center;
-        text-align: left;
+        text-align: center;
         padding-top: 50px;
       }
 
-      #why .why-text {
-        order: 1; /* Ensure text comes first */
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-      }
-
       #why img {
-        order: 2; /* Ensure image comes after the text */
+        order: 2;
         width: 90%;
         max-width: 100%;
         margin: 20px auto;
+      }
+
+      #why .why-text {
+        order: 1;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
       }
 
       #why .cta-button {
@@ -246,6 +234,18 @@
       </div>
     </section>
   </main>
+
+  <script>
+    // Add event listener for scroll event
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled'); // Add class when scrolled
+      } else {
+        header.classList.remove('scrolled'); // Remove class when at the top
+      }
+    });
+  </script>
 </body>
 
 </html>
