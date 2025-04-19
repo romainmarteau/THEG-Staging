@@ -104,12 +104,12 @@
       border-radius: 8px;
       text-decoration: none;
       display: inline-block;
-      width: auto; /* Ensure button width adjusts to content */
+      width: auto;
     }
 
     #who {
       background-color: #F5F2EA;
-      padding: 80px 20px;
+      padding: 80px 20px 20px; /* Reduced bottom padding */
       text-align: center;
     }
 
@@ -123,7 +123,7 @@
 
     #why {
       background-color: #fff;
-      padding: 180px 30px 80px;
+      padding: 80px 30px 80px; /* Reduced top padding */
       display: flex;
       flex-wrap: nowrap;
       align-items: flex-start;
@@ -157,15 +157,6 @@
       align-self: flex-start;
     }
 
-    /* Ensure CTA Button in #why matches the size of the one in #who */
-    #why .cta-button {
-      width: auto; /* Adjust to content size */
-      padding: 16px 32px; /* Keep consistent padding */
-      text-align: center;
-      align-self: flex-start; /* Align to the left */
-      margin-top: 40px;
-    }
-
     @media (max-width: 768px) {
       .hero-section {
         padding: 150px 20px 0 20px;
@@ -175,7 +166,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding-top: 180px;
+        padding-top: 80px; /* Reduced padding for mobile */
       }
 
       #why img {
