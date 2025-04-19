@@ -103,40 +103,27 @@
       display: inline-block;
     }
 
-    #who {
-      background-color: #F5F2EA;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    #who img {
-      max-width: 600px;
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 40px auto;
-    }
-
     #why {
       background-color: #fff;
-      padding: 120px 30px 80px;
+      padding: 80px 10vw; /* Dynamic horizontal padding */
       display: flex;
       flex-wrap: nowrap;
-      align-items: flex-start;
-      justify-content: center;
+      align-items: flex-start; /* Align top of image and text */
+      justify-content: space-between;
       gap: 40px;
     }
 
     #why .why-text {
       flex: 1;
-      max-width: 540px;
+      max-width: 48%; /* Keep text and image balanced */
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      font-size: 1.2vw; /* Dynamic font sizing */
     }
 
     #why .why-text h2 {
-      font-size: 28px;
+      font-size: 2vw; /* Dynamic font sizing */
       margin-bottom: 10px;
     }
 
@@ -145,12 +132,26 @@
       margin-top: 0;
     }
 
+    #why .why-text ul {
+      padding-left: 20px;
+    }
+
+    #why .why-text li {
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
     #why img {
       flex: 1;
-      max-width: 460px;
+      max-width: 48%; /* Keep text and image balanced */
       height: auto;
+      object-fit: contain;
       align-self: flex-start;
-      margin-top: 0;
+    }
+
+    #why .cta-button {
+      margin-top: auto; /* Align button with image bottom */
+      align-self: flex-start;
     }
 
     @media (max-width: 768px) {
@@ -203,22 +204,7 @@
   </header>
 
   <main>
-    <section class="hero-section">
-      <div class="header-content">
-        <h2>Our Mission</h2>
-        <h1>Uniting the Equestrian<br>Voice of the East End</h1>
-        <a href="#join" class="cta-button">Join the Group</a>
-      </div>
-    </section>
-
-    <section id="who">
-      <h2>Who We Are</h2>
-      <img src="Who_We_Are.png" alt="Who We Are Diagram">
-      <a href="#join" class="cta-button">Join the Group</a>
-    </section>
-
     <section id="why">
-      <img src="horse_picture_v2.jpg" alt="Horse standing in a field">
       <div class="why-text">
         <h2>Why We Exist</h2>
         <h3>Because One Voice Isn’t Enough Anymore</h3>
@@ -232,6 +218,7 @@
         </ul>
         <a href="#join" class="cta-button">Make a Difference</a>
       </div>
+      <img src="horse_picture_v2.jpg" alt="Horse standing in a field">
     </section>
   </main>
 </body>
