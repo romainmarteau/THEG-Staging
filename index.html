@@ -15,20 +15,13 @@
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      overflow-x: hidden;
+      overflow-x: hidden; /* Allow horizontal scrolling */
+      overflow-y: auto; /* Ensure vertical scrolling */
     }
 
-    /* Adjusted background settings */
     body {
       background: url('preview.jpg') no-repeat center center;
       background-size: cover;
-    }
-
-    /* Specific fix for iOS to remove `background-attachment: fixed` */
-    @supports (-webkit-touch-callout: none) {
-      body {
-        background-attachment: scroll;
-      }
     }
 
     header {
@@ -68,8 +61,12 @@
       flex-shrink: 0;
     }
 
+    header nav a:hover {
+      opacity: 0.8;
+    }
+
     .hero-section {
-      height: 100vh;
+      min-height: 100vh; /* Use min-height to allow dynamic growth */
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -79,12 +76,6 @@
       box-sizing: border-box;
       background: url('preview.jpg') no-repeat center center;
       background-size: cover;
-    }
-
-    @supports (-webkit-touch-callout: none) {
-      .hero-section {
-        background-attachment: scroll;
-      }
     }
 
     .header-content h2 {
@@ -114,6 +105,88 @@
       text-decoration: none;
       display: inline-block;
     }
+
+    #who {
+      background-color: #F5F2EA;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    #who img {
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 40px auto;
+    }
+
+    #why {
+      background-color: #fff;
+      padding: 180px 30px 80px;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    #why .why-text {
+      flex: 1;
+      max-width: 540px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #why .why-text h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    #why .why-text h3 {
+      font-weight: 500;
+      margin-top: 0;
+    }
+
+    #why img {
+      flex: 1;
+      max-width: 460px;
+      height: auto;
+      object-fit: contain;
+      align-self: flex-start;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 150px 20px 0 20px;
+      }
+
+      #why {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: 180px;
+      }
+
+      #why img {
+        width: 90%;
+        max-width: 100%;
+        margin: 20px auto;
+        order: 1;
+      }
+
+      #why .why-text {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        order: 2;
+      }
+
+      #why .cta-button {
+        display: block;
+        margin: 30px auto 0;
+      }
+    }
   </style>
 </head>
 
@@ -134,6 +207,29 @@
         <h2>Our Mission</h2>
         <h1>Uniting the Equestrian<br>Voice of the East End</h1>
         <a href="#join" class="cta-button">Join the Group</a>
+      </div>
+    </section>
+
+    <section id="who">
+      <h2>Who We Are</h2>
+      <img src="Who_We_Are.png" alt="Who We Are Diagram">
+      <a href="#join" class="cta-button">Join the Group</a>
+    </section>
+
+    <section id="why">
+      <img src="horse_picture_v2.jpg" alt="Horse standing in a field">
+      <div class="why-text">
+        <h2>Why We Exist</h2>
+        <h3>Because One Voice Isn’t Enough Anymore</h3>
+        <p>In the past 20–30 years, many local horse farms have shut down — pushed out by development pressures, zoning restrictions, and lack of public support. As individuals, it’s hard to push back. As a group, we are stronger.</p>
+        <ul>
+          <li>Raise awareness about the importance of the horse industry</li>
+          <li>Advocate for equestrian-friendly policies</li>
+          <li>Promote open space and agricultural land preservation</li>
+          <li>Support each other and share resources</li>
+          <li>Together, we can protect the future of equestrian life on the East End.</li>
+        </ul>
+        <a href="#join" class="cta-button">Make a Difference</a>
       </div>
     </section>
   </main>
