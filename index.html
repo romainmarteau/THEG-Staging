@@ -225,25 +225,6 @@
       max-width: 700px;
       margin: 0 auto;
     }
-
-    @media (max-width: 768px) {
-      #what {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 80px;
-      }
-
-      #what .icons {
-        grid-template-columns: repeat(2, 100px);
-        justify-content: center;
-        margin-bottom: 30px;
-        padding-top: 0;
-      }
-
-      #what .what-text {
-        width: 100%;
-      }
-    }
   </style>
 </head>
 
@@ -315,7 +296,32 @@
 
     <section id="join">
       <div class="form-wrapper">
-        <!-- Form will be inserted here -->
+        <form>
+          <h2>Join the Hamptons Equestrian Group</h2>
+          <label for="name">Name*</label><br>
+          <input type="text" id="name" name="name" placeholder="--John Schmidt--" required><br><br>
+
+          <label for="email">Email*</label><br>
+          <input type="email" id="email" name="email" placeholder="--John.Schmidt@gmail.com--" required><br><br>
+
+          <label for="address">Address*</label><br>
+          <input type="text" id="address" name="address" placeholder="--123 Main Street, Southampton NY--" required><br><br>
+
+          <label for="phone">Phone Number*</label><br>
+          <input type="tel" id="phone" name="phone" placeholder="--(123) 456-7890--" required><br><br>
+
+          <label for="affiliation">Farm/Business Affiliation*</label><br>
+          <select id="affiliation" name="affiliation" required>
+            <option value="">-- Please Select --</option>
+          </select><br><br>
+
+          <label for="role">Your Role</label><br>
+          <select id="role" name="role">
+            <option value="">-- Please Select --</option>
+          </select><br><br>
+
+          <button class="cta-button" type="submit">Join the Group</button>
+        </form>
       </div>
     </section>
   </main>
