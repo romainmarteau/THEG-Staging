@@ -24,7 +24,7 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    .fixed-header {
+    header {
       position: fixed;
       top: 0;
       left: 0;
@@ -37,12 +37,12 @@
       z-index: 1000;
     }
 
-    .fixed-header img {
+    header img {
       width: 60px;
       height: auto;
     }
 
-    .fixed-header nav {
+    header nav {
       display: flex;
       flex-wrap: nowrap;
       gap: 24px;
@@ -51,7 +51,7 @@
       max-width: 100%;
     }
 
-    .fixed-header nav a {
+    header nav a {
       color: white;
       text-decoration: none;
       transition: opacity 0.3s ease;
@@ -59,11 +59,11 @@
       flex-shrink: 0;
     }
 
-    .fixed-header nav a:hover {
+    header nav a:hover {
       opacity: 0.8;
     }
 
-    header {
+    .hero-section {
       background: url('preview.jpg') no-repeat center center;
       background-size: cover;
       height: 100vh;
@@ -72,13 +72,13 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-      padding-left: 60px;
-      padding-top: 150px;
       box-sizing: border-box;
     }
 
     .header-content {
       max-width: 700px;
+      padding-left: 60px;
+      padding-top: 150px;
     }
 
     .header-content h2 {
@@ -118,19 +118,19 @@
     }
 
     @media (max-width: 1024px) {
-      .fixed-header nav {
+      header nav {
         flex-wrap: wrap;
       }
     }
 
     @media (max-width: 768px) {
-      .fixed-header {
+      header {
         flex-direction: column;
         align-items: center;
         padding: 20px;
       }
 
-      .fixed-header nav {
+      header nav {
         flex-direction: column;
         gap: 10px;
         font-size: 16px;
@@ -145,7 +145,7 @@
 </head>
 
 <body>
-  <div class="fixed-header">
+  <header>
     <img src="small_logo_white.png" alt="Logo">
     <nav>
       <a href="#who">Who</a>
@@ -153,16 +153,16 @@
       <a href="#what">What</a>
       <a href="#how">How</a>
     </nav>
-  </div>
+  </header>
 
-  <header>
+  <section class="hero-section">
     <div class="header-content">
       <h2>Our Mission</h2>
       <h1>Uniting the Equestrian<br>Voice of the East End</h1>
       <a href="#join" class="cta-button">Join the Group</a>
+      <img src="logo_white.png" alt="White Logo" class="logo">
     </div>
-    <img src="logo_white.png" alt="White Logo" class="logo">
-  </header>
+  </section>
 </body>
 
 </html>
