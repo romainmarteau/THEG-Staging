@@ -175,17 +175,14 @@
       background-color: #fff;
       padding: 80px 30px;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
     }
 
     #why .why-text {
       flex: 1;
-      min-width: 280px;
-      max-width: 500px;
-      margin: 20px;
-      font-size: 16px;
+      max-width: 50%;
+      padding: 0 20px;
     }
 
     #why .why-text h2 {
@@ -209,11 +206,8 @@
 
     #why img {
       flex: 1;
-      min-width: 280px;
-      max-width: 400px;
-      margin: 20px;
-      width: 100%;
-      height: auto;
+      max-width: 50%;
+      padding: 0 20px;
       object-fit: contain;
     }
 
@@ -246,11 +240,19 @@
       }
 
       #why {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: 10px;
       }
 
       #why .why-text {
-        font-size: 14px;
+        font-size: 12px;
+        max-width: 50%;
+      }
+
+      #why img {
+        max-width: 50%;
       }
     }
   </style>
