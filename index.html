@@ -10,6 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="The Hamptons Equestrian Group">
+  <meta property="og:description" content="A coalition supporting equestrian-friendly land use and preservation on the East End.">
+  <meta property="og:image" content="https://romainmarteau.github.io/THEG-Staging/preview.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://romainmarteau.github.io/THEG-Staging/">
+
   <style>
     /* General Reset */
     body,
@@ -17,7 +24,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      overflow-x: hidden; /* Prevent horizontal scrolling */
+      overflow-x: hidden; /* Prevent unwanted horizontal scrolling */
     }
 
     /* Header Styles */
@@ -29,9 +36,10 @@
       background-color: rgba(145, 129, 148, 0.1);
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-between; /* Space between logo and nav */
       padding: 20px 60px;
       z-index: 1000;
+      box-sizing: border-box;
     }
 
     /* Logo */
@@ -44,17 +52,20 @@
     /* Navigation */
     header nav {
       display: flex;
-      gap: 24px;
+      gap: 24px; /* Space between links */
       font-weight: 500;
       font-size: 18px;
-      white-space: nowrap;
+      flex-wrap: nowrap; /* Prevent wrapping */
+      overflow-x: auto; /* Allow scrolling if necessary */
+      box-sizing: border-box;
     }
 
     header nav a {
       color: white;
       text-decoration: none;
       transition: opacity 0.3s ease;
-      flex-shrink: 0; /* Prevent shrinking */
+      white-space: nowrap; /* Prevent text wrapping */
+      flex-shrink: 0; /* Prevent shrinking of links */
     }
 
     header nav a:hover {
@@ -116,11 +127,6 @@
       width: 130px;
     }
 
-    /* Debugging Borders */
-    header, header nav, header nav a {
-      border: 1px solid yellow; /* Debugging border to visualize layout */
-    }
-
     /* Media Queries */
     @media (max-width: 1200px) {
       header nav {
@@ -131,7 +137,7 @@
 
     @media (max-width: 1024px) {
       header nav {
-        flex-wrap: nowrap; /* Ensure no wrapping */
+        flex-wrap: nowrap; /* Ensure no wrapping occurs */
       }
     }
 
@@ -163,7 +169,7 @@
       <a href="#who">Who</a>
       <a href="#why">Why</a>
       <a href="#what">What</a>
-      <a href="#how">How</a>
+      <a href="#how">How</a> <!-- Ensure this is included -->
     </nav>
   </header>
 
