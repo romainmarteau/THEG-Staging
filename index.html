@@ -218,11 +218,12 @@
       align-self: flex-start;
     }
 
-    /* Fix for CTA button to span full width of the text area */
+    /* Ensure the CTA button matches the size of the button in the WHO section */
     #why .cta-button {
-      width: 100%; /* Make the button span the entire width of the text column */
-      text-align: center; /* Center align the button text */
-      margin-top: 20px; /* Adjust spacing above the button */
+      width: auto; /* Match the size of the button in the WHO section */
+      padding: 16px 32px; /* Keep consistent padding */
+      margin-top: 40px; /* Add spacing above the button */
+      align-self: flex-start; /* Keep the button aligned to text */
     }
 
     @media (max-width: 768px) {
