@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-
   <style>
     body, html {
       margin: 0;
@@ -17,12 +15,10 @@
       font-family: 'Poppins', sans-serif;
       overflow-x: hidden;
     }
-
     body {
       background: url('preview.jpg') no-repeat center center fixed;
       background-size: cover;
     }
-
     header {
       position: fixed;
       top: 0;
@@ -36,13 +32,11 @@
       z-index: 1000;
       box-sizing: border-box;
     }
-
     header img {
       width: 60px;
       height: auto;
       flex-shrink: 0;
     }
-
     header nav {
       display: flex;
       gap: 24px;
@@ -51,7 +45,6 @@
       flex-wrap: nowrap;
       overflow-x: visible;
     }
-
     header nav a {
       color: white;
       text-decoration: none;
@@ -59,11 +52,9 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
-
     header nav a:hover {
       opacity: 0.8;
     }
-
     .hero-section {
       min-height: 100vh;
       display: flex;
@@ -76,14 +67,12 @@
       background: url('preview.jpg') no-repeat center center;
       background-size: cover;
     }
-
     .header-content h2 {
       font-size: 24px;
       font-weight: 700;
       letter-spacing: 4.36px;
       margin: 0 0 20px;
     }
-
     .header-content h1 {
       font-size: 36px;
       font-weight: 700;
@@ -91,7 +80,6 @@
       line-height: 1.3;
       margin: 0 0 40px;
     }
-
     .cta-button {
       background-color: #557D5B;
       padding: 16px 32px;
@@ -106,13 +94,11 @@
       max-width: 300px;
       text-align: center;
     }
-
     #who {
       background-color: #F5F2EA;
       padding: 80px 20px 20px;
       text-align: center;
     }
-
     #who img {
       max-width: 600px;
       width: 100%;
@@ -120,7 +106,6 @@
       display: block;
       margin: 40px auto;
     }
-
     #why {
       background-color: #fff;
       padding: 180px 30px 80px;
@@ -130,7 +115,6 @@
       justify-content: center;
       gap: 40px;
     }
-
     #why .why-text {
       flex: 1;
       max-width: 540px;
@@ -138,26 +122,21 @@
       flex-direction: column;
       justify-content: space-between;
     }
-
     #why .why-text h2 {
       font-size: 28px;
       margin-bottom: 10px;
     }
-
     #why .why-text h3 {
       font-weight: 500;
       margin-top: 0;
     }
-
     #why .why-text ul {
       padding-left: 20px;
     }
-
     #why .why-text li {
       margin-bottom: 10px;
       text-align: left;
     }
-
     #why img {
       flex: 1;
       max-width: 460px;
@@ -166,7 +145,6 @@
       align-self: flex-start;
       margin-top: 0;
     }
-
     #what {
       background-color: #F5F2EA;
       padding: 100px 30px 80px;
@@ -175,7 +153,6 @@
       justify-content: center;
       gap: 60px;
     }
-
     #what .icons {
       display: grid;
       grid-template-columns: repeat(2, 130px);
@@ -183,82 +160,69 @@
       align-content: start;
       padding-top: 60px;
     }
-
     #what .icons img {
       width: 130px;
       height: auto;
       display: block;
     }
-
     #what .what-text {
       max-width: 540px;
     }
-
     #what .what-text h2 {
       font-size: 28px;
       margin-bottom: 10px;
     }
-
     #what .what-text h3 {
       font-weight: 500;
       margin-top: 0;
     }
-
     #what .what-text ul {
       padding-left: 20px;
     }
-
     #what .what-text li {
       margin-bottom: 10px;
       text-align: left;
     }
-
     #join {
       background: #fff;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: block;
       padding: 120px 0 0 0; /* Top padding to clear the fixed header */
     }
-
     .form-wrapper {
       background-color: #FBF8EC;
       border-radius: 16px;
       padding: 28px 32px;
       max-width: 576px;
       margin: 32px auto;
-      max-height: 90vh;
+      max-height: calc(100vh - 140px);
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
+      width: 100%;
+      box-sizing: border-box;
     }
-
     .form-wrapper h2 {
       text-align: center;
       margin-top: 0;
       padding-top: 0;
     }
-
     .form-wrapper form {
       display: flex;
       flex-direction: column;
     }
-
     .form-wrapper label {
       margin-bottom: 2px;
       font-weight: 500;
       font-size: 13px;
       color: black;
     }
-
     .form-wrapper input::placeholder {
       color: #aaa;
       font-size: 13px;
       font-style: italic;
     }
-
     .form-wrapper input,
     .form-wrapper select {
       margin-bottom: 20px;
@@ -269,21 +233,19 @@
       width: 100%;
       box-sizing: border-box;
     }
-
     .form-wrapper button.cta-button {
       align-self: center;
       margin-top: 40px;
     }
-
-    /* --- Responsive styles for form-wrapper ONLY --- */
     @media (max-width: 600px) {
       .form-wrapper {
         max-width: 98vw;
+        width: 98vw;
         padding: 12px 4vw;
         margin: 12px auto;
         border-radius: 8px;
         box-sizing: border-box;
-        max-height: 95vh;
+        max-height: calc(100vh - 40px);
         overflow-y: auto;
       }
       .form-wrapper h2 {
@@ -307,7 +269,6 @@
     }
   </style>
 </head>
-
 <body>
   <header>
     <a href="#top">
@@ -320,7 +281,6 @@
       <a href="#join">How</a>
     </nav>
   </header>
-
   <main>
     <section id="top" class="hero-section">
       <div class="header-content">
@@ -329,13 +289,11 @@
         <a href="#join" class="cta-button">Join the Group</a>
       </div>
     </section>
-
     <section id="who">
       <h2>Who We Are</h2>
       <img src="Who_We_Are.png" alt="Who We Are Diagram">
       <a href="#join" class="cta-button">Join the Group</a>
     </section>
-
     <section id="why">
       <img src="horse_picture_v2.jpg" alt="Horse standing in a field">
       <div class="why-text">
@@ -352,7 +310,6 @@
         <a href="#join" class="cta-button">Make a Difference</a>
       </div>
     </section>
-
     <section id="what">
       <div class="icons">
         <img src="icon_people.png" alt="Community Icon">
@@ -373,36 +330,28 @@
         <a href="#join" class="cta-button">Join the Group</a>
       </div>
     </section>
-
     <section id="join">
       <div class="form-wrapper">
         <h2>Join the Hamptons Equestrian Group</h2>
         <form>
           <label for="name">Name*</label>
           <input type="text" id="name" name="name" placeholder="--John Schmidt--" required onfocus="this.placeholder = ''" onblur="this.placeholder = '--John Schmidt--'">
-
           <label for="email">Email*</label>
           <input type="email" id="email" name="email" placeholder="--John.Schmidt@gmail.com--" required onfocus="this.placeholder = ''" onblur="this.placeholder = '--John.Schmidt@gmail.com--'">
-
           <label for="address">Address*</label>
           <input type="text" id="address" name="address" placeholder="--123 Main Street, Southampton NY--" required onfocus="this.placeholder = ''" onblur="this.placeholder = '--123 Main Street, Southampton NY--'">
-
           <label for="phone">Phone Number*</label>
           <input type="tel" id="phone" name="phone" placeholder="--(123) 456-7890--" required onfocus="this.placeholder = ''" onblur="this.placeholder = '--(123) 456-7890--'">
-
           <label for="affiliation">Farm/Business Affiliation*</label>
           <input type="text" id="affiliation" name="affiliation" placeholder="--Two Trees Farm--" required onfocus="this.placeholder = ''" onblur="this.placeholder = '--Two Trees Farm--'">
-
           <label for="role">Your Role</label>
           <select id="role" name="role">
             <option value="">-- Please Select --</option>
           </select>
-
           <button class="cta-button" type="submit">Join the Group</button>
         </form>
       </div>
     </section>
   </main>
 </body>
-
 </html>
