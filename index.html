@@ -175,24 +175,24 @@
       }
 
       #why {
-        flex-direction: column;
+        flex-direction: column; /* Stack content vertically on small screens */
         align-items: center;
-        text-align: center;
+        text-align: left;
         padding-top: 50px;
       }
 
-      #why img {
-        width: 90%;
-        max-width: 100%;
-        margin: 20px auto;
-        order: 1;
-      }
-
       #why .why-text {
+        order: 1; /* Ensure text comes first */
         width: 100%;
         max-width: 100%;
         padding: 0;
-        order: 2;
+      }
+
+      #why img {
+        order: 2; /* Ensure image comes after the text */
+        width: 90%;
+        max-width: 100%;
+        margin: 20px auto;
       }
 
       #why .cta-button {
