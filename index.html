@@ -35,7 +35,7 @@
       justify-content: space-between;
       padding: 20px 60px;
       z-index: 1000;
-      flex-wrap: nowrap;
+      overflow-x: auto;
     }
 
     header img {
@@ -51,6 +51,7 @@
       font-size: 18px;
       flex-wrap: nowrap;
       white-space: nowrap;
+      overflow-x: auto;
     }
 
     header nav a {
@@ -116,6 +117,13 @@
       bottom: 40px;
       right: 60px;
       width: 130px;
+    }
+
+    @media (max-width: 1200px) {
+      header nav {
+        font-size: 16px;
+        gap: 20px;
+      }
     }
 
     @media (max-width: 1024px) {
