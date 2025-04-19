@@ -171,6 +171,50 @@
       margin: 40px auto;
     }
 
+    #why {
+      background-color: #fff;
+      padding: 80px 30px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #why .why-text {
+      flex: 1;
+      min-width: 280px;
+      max-width: 500px;
+      margin: 20px;
+    }
+
+    #why .why-text h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    #why .why-text h3 {
+      font-weight: 500;
+      margin-top: 0;
+    }
+
+    #why .why-text ul {
+      padding-left: 20px;
+    }
+
+    #why .why-text li {
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    #why img {
+      flex: 1;
+      min-width: 280px;
+      max-width: 400px;
+      margin: 20px;
+      width: 100%;
+      height: auto;
+    }
+
     @media (max-width: 768px) {
       header nav {
         display: none;
@@ -195,6 +239,10 @@
       .cta-button {
         font-size: 22.5px;
         padding: 20px 40px;
+      }
+
+      #why {
+        flex-direction: column;
       }
     }
   </style>
@@ -237,6 +285,23 @@
       <h2>Who We Are</h2>
       <img src="Who_We_Are.png" alt="Who We Are Diagram">
       <a href="#join" class="cta-button">Join the Group</a>
+    </section>
+
+    <section id="why">
+      <div class="why-text">
+        <h2>Why We Exist</h2>
+        <h3>Because One Voice Isn’t Enough Anymore</h3>
+        <p>In the past 20–30 years, many local horse farms have shut down — pushed out by development pressures, zoning restrictions, and lack of public support. As individuals, it’s hard to push back. As a group, we are stronger.</p>
+        <ul>
+          <li>Raise awareness about the importance of the horse industry</li>
+          <li>Advocate for equestrian-friendly policies</li>
+          <li>Promote open space and agricultural land preservation</li>
+          <li>Support each other and share resources</li>
+          <li>Together, we can protect the future of equestrian life on the East End.</li>
+        </ul>
+        <a href="#join" class="cta-button">Make a Difference</a>
+      </div>
+      <img src="horse_picture.jpg" alt="Horse standing in a field">
     </section>
   </main>
 
