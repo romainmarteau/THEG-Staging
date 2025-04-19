@@ -1,226 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+#why {
+  background-color: #fff;
+  padding: 80px 10vw;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start; /* Align text and image to the top */
+  justify-content: space-between; /* Space between text and image */
+  gap: 40px;
+}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Hamptons Equestrian Group</title>
-  <link rel="icon" href="favicon_black.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+#why .why-text {
+  flex: 1; /* Allow text to take up available space */
+  max-width: 48%; /* Keep text balanced with the image */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+}
 
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      overflow-x: hidden;
-    }
+#why .why-text h2 {
+  font-size: 2vw; /* Dynamic font size for responsiveness */
+  margin-bottom: 10px;
+}
 
-    body {
-      background: url('preview.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
+#why img {
+  flex: 1; /* Allow image to take up available space */
+  max-width: 48%; /* Keep image balanced with the text */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure image scales properly */
+  align-self: flex-start; /* Align image to the top */
+}
 
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 30px;
-      z-index: 1000;
-      box-sizing: border-box;
-    }
-
-    header img {
-      width: 60px;
-      height: auto;
-      flex-shrink: 0;
-    }
-
-    header nav {
-      display: flex;
-      gap: 24px;
-      font-weight: 500;
-      font-size: 18px;
-      flex-wrap: nowrap;
-      overflow-x: visible;
-    }
-
-    header nav a {
-      color: white;
-      text-decoration: none;
-      transition: opacity 0.3s ease;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    header nav a:hover {
-      opacity: 0.8;
-    }
-
-    .hero-section {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      color: white;
-      padding: 200px 30px 0 30px;
-      box-sizing: border-box;
-    }
-
-    .header-content h2 {
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: 4.36px;
-      margin: 0 0 20px;
-    }
-
-    .header-content h1 {
-      font-size: 36px;
-      font-weight: 700;
-      letter-spacing: 5.81px;
-      line-height: 1.3;
-      margin: 0 0 40px;
-    }
-
-    .cta-button {
-      background-color: #557D5B;
-      padding: 16px 32px;
-      font-size: 18px;
-      font-weight: 700;
-      color: white;
-      border: none;
-      margin-top: 40px;
-      border-radius: 8px;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    #why {
-      background-color: #fff;
-      padding: 80px 10vw; /* Dynamic horizontal padding */
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: flex-start; /* Align top of image and text */
-      justify-content: space-between;
-      gap: 40px;
-    }
-
-    #why .why-text {
-      flex: 1;
-      max-width: 48%; /* Keep text and image balanced */
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      font-size: 1.2vw; /* Dynamic font sizing */
-    }
-
-    #why .why-text h2 {
-      font-size: 2vw; /* Dynamic font sizing */
-      margin-bottom: 10px;
-    }
-
-    #why .why-text h3 {
-      font-weight: 500;
-      margin-top: 0;
-    }
-
-    #why .why-text ul {
-      padding-left: 20px;
-    }
-
-    #why .why-text li {
-      margin-bottom: 10px;
-      text-align: left;
-    }
-
-    #why img {
-      flex: 1;
-      max-width: 48%; /* Keep text and image balanced */
-      height: auto;
-      object-fit: contain;
-      align-self: flex-start;
-    }
-
-    #why .cta-button {
-      margin-top: auto; /* Align button with image bottom */
-      align-self: flex-start;
-    }
-
-    @media (max-width: 768px) {
-      header nav {
-        display: none;
-      }
-
-      .hero-section {
-        padding: 150px 20px 0 20px;
-      }
-
-      #why {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding-top: 180px;
-      }
-
-      #why img {
-        width: 90%;
-        max-width: 100%;
-        margin: 20px auto;
-        order: 1;
-      }
-
-      #why .why-text {
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-        order: 2;
-      }
-
-      #why .cta-button {
-        display: block;
-        margin: 30px auto 0;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <img src="small_logo_white.png" alt="Logo">
-    <nav>
-      <a href="#who">Who</a>
-      <a href="#why">Why</a>
-      <a href="#what">What</a>
-      <a href="#how">How</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="why">
-      <div class="why-text">
-        <h2>Why We Exist</h2>
-        <h3>Because One Voice Isn’t Enough Anymore</h3>
-        <p>In the past 20–30 years, many local horse farms have shut down — pushed out by development pressures, zoning restrictions, and lack of public support. As individuals, it’s hard to push back. As a group, we are stronger.</p>
-        <ul>
-          <li>Raise awareness about the importance of the horse industry</li>
-          <li>Advocate for equestrian-friendly policies</li>
-          <li>Promote open space and agricultural land preservation</li>
-          <li>Support each other and share resources</li>
-          <li>Together, we can protect the future of equestrian life on the East End.</li>
-        </ul>
-        <a href="#join" class="cta-button">Make a Difference</a>
-      </div>
-      <img src="horse_picture_v2.jpg" alt="Horse standing in a field">
-    </section>
-  </main>
-</body>
-
-</html>
+#why .cta-button {
+  margin-top: auto; /* Align bottom of the button with the image */
+  align-self: flex-start; /* Align button to the left */
+}
