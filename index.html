@@ -15,8 +15,8 @@
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      overflow-x: hidden; /* Allow horizontal scrolling */
-      overflow-y: auto; /* Ensure vertical scrolling */
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     body {
@@ -66,7 +66,7 @@
     }
 
     .hero-section {
-      min-height: 100vh; /* Use min-height to allow dynamic growth */
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -104,6 +104,7 @@
       border-radius: 8px;
       text-decoration: none;
       display: inline-block;
+      width: auto; /* Ensure button width adjusts to content */
     }
 
     #who {
@@ -154,6 +155,15 @@
       height: auto;
       object-fit: contain;
       align-self: flex-start;
+    }
+
+    /* Ensure CTA Button in #why matches the size of the one in #who */
+    #why .cta-button {
+      width: auto; /* Adjust to content size */
+      padding: 16px 32px; /* Keep consistent padding */
+      text-align: center;
+      align-self: flex-start; /* Align to the left */
+      margin-top: 40px;
     }
 
     @media (max-width: 768px) {
