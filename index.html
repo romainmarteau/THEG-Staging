@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Hamptons Equestrian Group</title>
   <link rel="icon" href="favicon_black.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
@@ -15,10 +17,12 @@
       padding: 0;
       font-family: 'Poppins', sans-serif;
       overflow-x: hidden;
+      overflow-y: auto;
     }
 
     body {
-      background-color: #fff;
+      background: url('preview.jpg') no-repeat center center;
+      background-size: cover;
     }
 
     /* Header Styles */
@@ -27,22 +31,24 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      padding: 20px 30px;
+      background: rgba(0, 0, 0, 0.1); /* Light transparent background */
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: background 0.3s ease;
+      padding: 20px 30px;
+      z-index: 1000;
+      box-sizing: border-box;
+      transition: background 0.3s ease; /* Smooth transition for background changes */
     }
 
     header.scrolled {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.7); /* Darker, more opaque background */
     }
 
-    header a.logo-link img {
+    header img {
       width: 60px;
       height: auto;
+      flex-shrink: 0;
     }
 
     header nav {
@@ -50,168 +56,138 @@
       gap: 24px;
       font-weight: 500;
       font-size: 18px;
+      flex-wrap: nowrap;
+      overflow-x: visible;
     }
 
     header nav a {
       color: white;
       text-decoration: none;
+      transition: opacity 0.3s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
-    /* Hamburger Menu */
-    .hamburger-menu {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 300px;
-      height: 100%;
-      background: white;
-      box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-      z-index: 1100;
+    header nav a:hover {
+      opacity: 0.8;
     }
 
-    .hamburger-menu.open {
-      transform: translateX(0);
-    }
-
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1000;
-    }
-
-    .overlay.active {
-      display: block;
-    }
-
-    .hamburger-menu ul {
-      list-style: none;
-      padding: 20px;
-    }
-
-    .hamburger-menu ul li {
-      margin: 20px 0;
-    }
-
-    .hamburger-menu ul li a {
-      text-decoration: none;
-      color: #333;
-    }
-
-    /* Hero Section (Section 1) */
+    /* Hero Section */
     .hero-section {
       min-height: 100vh;
-      background: url('preview.jpg') no-repeat center center;
-      background-size: cover;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: flex-start;
       color: white;
-      padding: 150px 30px;
+      padding: 200px 30px 0 30px;
       box-sizing: border-box;
+      background: url('preview.jpg') no-repeat center center;
+      background-size: cover;
     }
 
-    .hero-section h2 {
+    .header-content h2 {
       font-size: 24px;
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-
-    .hero-section h1 {
-      font-size: 48px;
       font-weight: 700;
-      margin-bottom: 20px;
-      line-height: 1.2;
+      letter-spacing: 4.36px;
+      margin: 0 0 20px;
     }
 
-    .hero-section .cta-button {
+    .header-content h1 {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: 5.81px;
+      line-height: 1.3;
+      margin: 0 0 40px;
+    }
+
+    /* CTA Button */
+    .cta-button {
       background-color: #557D5B;
-      color: white;
       padding: 16px 32px;
-      font-weight: bold;
       font-size: 18px;
-      text-decoration: none;
+      font-weight: 700;
+      color: white;
+      border: none;
+      margin-top: 40px;
       border-radius: 8px;
+      text-decoration: none;
       display: inline-block;
-      margin-top: 20px;
+      width: auto; /* Ensure button adjusts to content */
+      text-align: center;
+      max-width: 300px; /* Set a consistent max width for all buttons */
     }
 
-    .hero-section .logo-overlay {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      width: 100px;
+    #who {
+      background-color: #F5F2EA;
+      padding: 80px 20px 20px;
+      text-align: center;
+    }
+
+    #who img {
+      max-width: 600px;
+      width: 100%;
       height: auto;
+      display: block;
+      margin: 40px auto;
     }
 
-    /* Section Layout */
-    section {
-      padding: 80px 30px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
-    }
-
-    #who,
     #why {
-      text-align: left;
+      background-color: #fff;
+      padding: 50px 30px 80px;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 40px;
+      scroll-margin-top: 95px;
     }
 
-    #who img,
+    #why .why-text {
+      flex: 1;
+      max-width: 540px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
     #why img {
       flex: 1;
-      max-width: 50%; /* Ensure images take up half the space */
+      max-width: 460px;
       height: auto;
+      object-fit: contain;
+      align-self: flex-start;
     }
 
-    #who .text-content,
-    #why .text-content {
-      flex: 1;
-      max-width: 50%; /* Ensure text takes up half the space */
-    }
-
-    #who h2,
-    #why h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    #who p,
-    #why p {
-      font-size: 16px;
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-
-    #who a.cta-button,
-    #why a.cta-button {
-      margin-top: 20px;
-    }
-
-    /* Responsive Design */
     @media (max-width: 768px) {
-      section {
+      .hero-section {
+        padding: 150px 20px 0 20px;
+      }
+
+      #why {
         flex-direction: column;
+        align-items: center;
         text-align: center;
+        padding-top: 50px;
       }
 
-      #who img,
       #why img {
-        max-width: 100%; /* Full width for images on small screens */
-        margin-bottom: 20px;
+        order: 2;
+        width: 90%;
+        max-width: 100%;
+        margin: 20px auto;
       }
 
-      #who .text-content,
-      #why .text-content {
-        max-width: 100%; /* Full width for text on small screens */
+      #why .why-text {
+        order: 1;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+      }
+
+      #why .cta-button {
+        display: block;
+        margin: 30px auto 0;
       }
     }
   </style>
@@ -219,9 +195,7 @@
 
 <body>
   <header>
-    <a href="#" class="logo-link">
-      <img src="small_logo_white.png" alt="Logo">
-    </a>
+    <img src="small_logo_white.png" alt="Logo">
     <nav>
       <a href="#who">Who</a>
       <a href="#why">Why</a>
@@ -231,63 +205,47 @@
   </header>
 
   <main>
-    <!-- Section 1: Hero Section -->
     <section class="hero-section">
-      <h2>Our Mission</h2>
-      <h1>Uniting the Equestrian Voice of the East End</h1>
-      <a href="#who" class="cta-button">Join the Group</a>
-      <img src="logo_overlay.png" alt="Hamptons Equestrian Group Logo" class="logo-overlay">
+      <div class="header-content">
+        <h2>Our Mission</h2>
+        <h1>Uniting the Equestrian<br>Voice of the East End</h1>
+        <a href="#join" class="cta-button">Join the Group</a>
+      </div>
     </section>
 
     <section id="who">
-      <div class="text-content">
-        <h2>Who We Are</h2>
-        <p>The Hamptons Equestrian Group is made up of riders, trainers, farm owners, and more.</p>
-        <a href="#join" class="cta-button">Join the Group</a>
-      </div>
+      <h2>Who We Are</h2>
       <img src="Who_We_Are.png" alt="Who We Are Diagram">
+      <a href="#join" class="cta-button">Join the Group</a>
     </section>
 
     <section id="why">
-      <div class="text-content">
+      <img src="horse_picture_v2.jpg" alt="Horse standing in a field">
+      <div class="why-text">
         <h2>Why We Exist</h2>
-        <p>In the past 20–30 years, many local horse farms have shut down — pushed out by development pressures, zoning restrictions, and lack of public support.</p>
+        <h3>Because One Voice Isn’t Enough Anymore</h3>
+        <p>In the past 20–30 years, many local horse farms have shut down — pushed out by development pressures, zoning restrictions, and lack of public support. As individuals, it’s hard to push back. As a group, we are stronger.</p>
+        <ul>
+          <li>Raise awareness about the importance of the horse industry</li>
+          <li>Advocate for equestrian-friendly policies</li>
+          <li>Promote open space and agricultural land preservation</li>
+          <li>Support each other and share resources</li>
+          <li>Together, we can protect the future of equestrian life on the East End.</li>
+        </ul>
         <a href="#join" class="cta-button">Make a Difference</a>
       </div>
-      <img src="horse_picture_v2.jpg" alt="Horse standing in a field">
     </section>
   </main>
 
   <script>
-    // Darken header on scroll
-    window.addEventListener('scroll', () => {
+    // Add event listener for scroll event
+    window.addEventListener('scroll', function () {
       const header = document.querySelector('header');
       if (window.scrollY > 50) {
-        header.classList.add('scrolled');
+        header.classList.add('scrolled'); // Add class when scrolled
       } else {
-        header.classList.remove('scrolled');
+        header.classList.remove('scrolled'); // Remove class when at the top
       }
-    });
-
-    // Hamburger menu functionality
-    const menu = document.querySelector('.hamburger-menu');
-    const overlay = document.querySelector('.overlay');
-    const openMenu = document.querySelector('.hamburger-icon');
-    const closeMenu = document.querySelector('.hamburger-menu-close');
-
-    openMenu?.addEventListener('click', () => {
-      menu.classList.add('open');
-      overlay.classList.add('active');
-    });
-
-    closeMenu?.addEventListener('click', () => {
-      menu.classList.remove('open');
-      overlay.classList.remove('active');
-    });
-
-    overlay?.addEventListener('click', () => {
-      menu.classList.remove('open');
-      overlay.classList.remove('active');
     });
   </script>
 </body>
