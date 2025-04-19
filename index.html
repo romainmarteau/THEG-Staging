@@ -10,21 +10,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="The Hamptons Equestrian Group">
-  <meta property="og:description" content="A coalition supporting equestrian-friendly land use and preservation on the East End.">
-  <meta property="og:image" content="https://romainmarteau.github.io/THEG-Staging/preview.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://romainmarteau.github.io/THEG-Staging/">
-
   <style>
+    /* General Reset */
     body,
     html {
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
     }
 
+    /* Header Styles */
     header {
       position: fixed;
       top: 0;
@@ -36,35 +32,36 @@
       justify-content: space-between;
       padding: 20px 60px;
       z-index: 1000;
-      overflow: visible;
     }
 
+    /* Logo */
     header img {
       width: 60px;
       height: auto;
       flex-shrink: 0;
     }
 
+    /* Navigation */
     header nav {
       display: flex;
       gap: 24px;
       font-weight: 500;
       font-size: 18px;
       white-space: nowrap;
-      overflow: visible; /* Ensure no clipping happens */
     }
 
     header nav a {
       color: white;
       text-decoration: none;
       transition: opacity 0.3s ease;
-      flex-shrink: 0; /* Prevent shrinking of links */
+      flex-shrink: 0; /* Prevent shrinking */
     }
 
     header nav a:hover {
       opacity: 0.8;
     }
 
+    /* Hero Section */
     .hero-section {
       background: url('preview.jpg') no-repeat center center;
       background-size: cover;
@@ -119,6 +116,12 @@
       width: 130px;
     }
 
+    /* Debugging Borders */
+    header, header nav, header nav a {
+      border: 1px solid yellow; /* Debugging border to visualize layout */
+    }
+
+    /* Media Queries */
     @media (max-width: 1200px) {
       header nav {
         font-size: 16px;
@@ -128,7 +131,7 @@
 
     @media (max-width: 1024px) {
       header nav {
-        flex-wrap: nowrap; /* Ensure no wrapping occurs */
+        flex-wrap: nowrap; /* Ensure no wrapping */
       }
     }
 
