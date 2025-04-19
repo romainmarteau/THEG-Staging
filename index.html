@@ -35,7 +35,6 @@
       justify-content: space-between;
       padding: 20px 60px;
       z-index: 1000;
-      overflow-x: auto;
     }
 
     header img {
@@ -51,14 +50,13 @@
       font-size: 18px;
       flex-wrap: nowrap;
       white-space: nowrap;
-      overflow-x: auto;
+      overflow: hidden; /* Prevent unnecessary scrolling */
     }
 
     header nav a {
       color: white;
       text-decoration: none;
       transition: opacity 0.3s ease;
-      white-space: nowrap;
     }
 
     header nav a:hover {
@@ -128,7 +126,7 @@
 
     @media (max-width: 1024px) {
       header nav {
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* Allow wrapping for smaller screens */
       }
     }
 
