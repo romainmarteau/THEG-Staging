@@ -60,49 +60,8 @@
       flex-shrink: 0;
     }
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
-      z-index: 1100;
-    }
-
-    .hamburger div {
-      width: 100%;
-      height: 4px;
-      background-color: white;
-      margin: 3px 0;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 200px;
-      background-color: white;
-      flex-direction: column;
-      align-items: center;
-      padding: 60px 20px;
-      box-sizing: border-box;
-      z-index: 1099;
-    }
-
-    .mobile-nav a {
-      color: black;
-      margin: 15px 0;
-      text-decoration: none;
-      font-size: 20px;
-    }
-
-    .mobile-nav.open {
-      display: flex;
+    header nav a:hover {
+      opacity: 0.8;
     }
 
     .hero-section {
@@ -160,7 +119,7 @@
 
     #why {
       background-color: #fff;
-      padding: 120px 30px 80px; /* Adjusted padding for spacing */
+      padding: 120px 30px 80px;
       display: flex;
       flex-wrap: nowrap;
       align-items: flex-start;
@@ -186,26 +145,12 @@
       margin-top: 0;
     }
 
-    #why .why-text ul {
-      padding-left: 20px;
-    }
-
-    #why .why-text li {
-      margin-bottom: 10px;
-      text-align: left;
-    }
-
     #why img {
       flex: 1;
       max-width: 460px;
       height: auto;
       align-self: flex-start;
-      margin-top: 0; /* Align image with the top of the text */
-    }
-
-    .cta-button {
-      align-self: flex-start;
-      margin-top: auto; /* Align bottom of the button with the image */
+      margin-top: 0;
     }
 
     @media (max-width: 768px) {
@@ -247,7 +192,48 @@
 </head>
 
 <body>
-  <!-- Content remains the same -->
+  <header>
+    <img src="small_logo_white.png" alt="Logo">
+    <nav>
+      <a href="#who">Who</a>
+      <a href="#why">Why</a>
+      <a href="#what">What</a>
+      <a href="#how">How</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="header-content">
+        <h2>Our Mission</h2>
+        <h1>Uniting the Equestrian<br>Voice of the East End</h1>
+        <a href="#join" class="cta-button">Join the Group</a>
+      </div>
+    </section>
+
+    <section id="who">
+      <h2>Who We Are</h2>
+      <img src="Who_We_Are.png" alt="Who We Are Diagram">
+      <a href="#join" class="cta-button">Join the Group</a>
+    </section>
+
+    <section id="why">
+      <img src="horse_picture_v2.jpg" alt="Horse standing in a field">
+      <div class="why-text">
+        <h2>Why We Exist</h2>
+        <h3>Because One Voice Isn’t Enough Anymore</h3>
+        <p>In the past 20–30 years, many local horse farms have shut down — pushed out by development pressures, zoning restrictions, and lack of public support. As individuals, it’s hard to push back. As a group, we are stronger.</p>
+        <ul>
+          <li>Raise awareness about the importance of the horse industry</li>
+          <li>Advocate for equestrian-friendly policies</li>
+          <li>Promote open space and agricultural land preservation</li>
+          <li>Support each other and share resources</li>
+          <li>Together, we can protect the future of equestrian life on the East End.</li>
+        </ul>
+        <a href="#join" class="cta-button">Make a Difference</a>
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>
