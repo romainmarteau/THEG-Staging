@@ -105,7 +105,8 @@
       border-radius: 8px;
       text-decoration: none;
       display: inline-block;
-      width: auto;
+      width: auto; /* Ensure button adjusts to content */
+      text-align: center;
     }
 
     #who {
@@ -130,7 +131,7 @@
       align-items: flex-start;
       justify-content: center;
       gap: 40px;
-      scroll-margin-top: 100px; /* Add offset for fixed header */
+      scroll-margin-top: 120px; /* Updated to fully offset the header height */
     }
 
     #why .why-text {
@@ -157,6 +158,15 @@
       height: auto;
       object-fit: contain;
       align-self: flex-start;
+    }
+
+    /* Ensure CTA Button in #why matches the size of the one in #who */
+    #why .cta-button {
+      width: auto; /* Adjust to content size */
+      padding: 16px 32px; /* Keep consistent padding */
+      text-align: center;
+      align-self: flex-start; /* Align to the left */
+      margin-top: 40px;
     }
 
     @media (max-width: 768px) {
