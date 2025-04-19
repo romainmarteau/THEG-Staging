@@ -19,7 +19,7 @@
     }
 
     body {
-      background: url('preview.jpg') no-repeat center center fixed;
+      background: url('preview.jpg') no-repeat center center;
       background-size: cover;
     }
 
@@ -185,6 +185,7 @@
       min-width: 280px;
       max-width: 500px;
       margin: 20px;
+      font-size: 16px;
     }
 
     #why .why-text h2 {
@@ -213,6 +214,7 @@
       margin: 20px;
       width: 100%;
       height: auto;
+      object-fit: contain;
     }
 
     @media (max-width: 768px) {
@@ -226,6 +228,8 @@
 
       .hero-section {
         padding: 150px 20px 0 20px;
+        background: url('preview.jpg') no-repeat center center;
+        background-size: cover;
       }
 
       .header-content h2 {
@@ -243,6 +247,10 @@
 
       #why {
         flex-direction: column;
+      }
+
+      #why .why-text {
+        font-size: 14px;
       }
     }
   </style>
