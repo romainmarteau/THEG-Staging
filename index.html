@@ -216,22 +216,14 @@
     #join {
       background-color: white;
       padding: 100px 30px;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-sizing: border-box;
-      overflow-y: auto;
     }
 
     .form-wrapper {
       background-color: #FBF8EC;
       border-radius: 16px;
-      padding: 32px;
+      padding: 28px 32px;
       max-width: 576px;
       margin: 0 auto;
-      max-height: 90vh;
-      overflow-y: auto;
     }
 
     .form-wrapper h2 {
@@ -273,15 +265,104 @@
       align-self: center;
       margin-top: 40px;
     }
-
-    @media (max-height: 700px) {
-      .form-wrapper {
-        padding: 16px 20px;
-      }
-
-      .form-wrapper button.cta-button {
-        margin-top: 20px;
-      }
-    }
   </style>
 </head>
+
+<body>
+  <header>
+    <a href="#top">
+      <img src="small_logo_white.png" alt="Logo">
+    </a>
+    <nav>
+      <a href="#who">Who</a>
+      <a href="#why">Why</a>
+      <a href="#what">What</a>
+      <a href="#join">How</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="top" class="hero-section">
+      <div class="header-content">
+        <h2>Our Mission</h2>
+        <h1>Uniting the Equestrian<br>Voice of the East End</h1>
+        <a href="#join" class="cta-button">Join the Group</a>
+      </div>
+    </section>
+
+    <section id="who">
+      <h2>Who We Are</h2>
+      <img src="Who_We_Are.png" alt="Who We Are Diagram">
+      <a href="#join" class="cta-button">Join the Group</a>
+    </section>
+
+    <section id="why">
+      <img src="horse_picture_v2.jpg" alt="Horse standing in a field">
+      <div class="why-text">
+        <h2>Why We Exist</h2>
+        <h3>Because One Voice Isn’t Enough Anymore</h3>
+        <p>In the past 20–30 years, many local horse farms have shut down — pushed out by development pressures, zoning restrictions, and lack of public support. As individuals, it’s hard to push back. As a group, we are stronger.</p>
+        <ul>
+          <li>Raise awareness about the importance of the horse industry</li>
+          <li>Advocate for equestrian-friendly policies</li>
+          <li>Promote open space and agricultural land preservation</li>
+          <li>Support each other and share resources</li>
+          <li>Together, we can protect the future of equestrian life on the East End.</li>
+        </ul>
+        <a href="#join" class="cta-button">Make a Difference</a>
+      </div>
+    </section>
+
+    <section id="what">
+      <div class="icons">
+        <img src="icon_people.png" alt="Community Icon">
+        <img src="icon_barn.png" alt="Barn Icon">
+        <img src="icon_calendar.png" alt="Calendar Icon">
+        <img src="icon_direction.png" alt="Signpost Icon">
+      </div>
+      <div class="what-text">
+        <h2>What We Do</h2>
+        <h3>Building Strength Through Connection</h3>
+        <p>In addition to advocacy, The Hamptons Equestrian Group is a space for collaboration and mutual support. We:</p>
+        <ul>
+          <li>Create a united voice for the future of equestrian life on the East End</li>
+          <li>Offer support on zoning, land use, and preservation issues</li>
+          <li>Connect newcomers with resources and community</li>
+          <li>Promote Equestrian Sports</li>
+        </ul>
+        <a href="#join" class="cta-button">Join the Group</a>
+      </div>
+    </section>
+
+    <section id="join">
+      <div class="form-wrapper">
+        <h2>Join the Hamptons Equestrian Group</h2>
+        <form>
+          <label for="name">Name*</label>
+          <input type="text" id="name" name="name" placeholder="--John Schmidt--" required onfocus="this.placeholder = ''" onblur="this.placeholder = '--John Schmidt--'">
+
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email" placeholder="--John.Schmidt@gmail.com--" required onfocus="this.placeholder = ''" onblur="this.placeholder = '--John.Schmidt@gmail.com--'">
+
+          <label for="address">Address*</label>
+          <input type="text" id="address" name="address" placeholder="--123 Main Street, Southampton NY--" required onfocus="this.placeholder = ''" onblur="this.placeholder = '--123 Main Street, Southampton NY--'">
+
+          <label for="phone">Phone Number*</label>
+          <input type="tel" id="phone" name="phone" placeholder="--(123) 456-7890--" required onfocus="this.placeholder = ''" onblur="this.placeholder = '--(123) 456-7890--'">
+
+          <label for="affiliation">Farm/Business Affiliation*</label>
+          <input type="text" id="affiliation" name="affiliation" placeholder="--Two Trees Farm--" required onfocus="this.placeholder = ''" onblur="this.placeholder = '--Two Trees Farm--'">
+
+          <label for="role">Your Role</label>
+          <select id="role" name="role">
+            <option value="">-- Please Select --</option>
+          </select>
+
+          <button class="cta-button" type="submit">Join the Group</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
