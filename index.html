@@ -265,6 +265,37 @@
       align-self: center;
       margin-top: 40px;
     }
+
+    /* --- Responsive styles for form-wrapper ONLY --- */
+    @media (max-width: 600px) {
+      .form-wrapper {
+        max-width: 98vw;
+        padding: 12px 4vw;
+        margin: 12px auto;
+        border-radius: 8px;
+        box-sizing: border-box;
+        max-height: 95vh;
+        overflow-y: auto;
+      }
+      .form-wrapper h2 {
+        font-size: 1.2rem;
+      }
+      .form-wrapper label,
+      .form-wrapper input,
+      .form-wrapper select,
+      .form-wrapper button.cta-button {
+        font-size: 1rem;
+      }
+      .form-wrapper input,
+      .form-wrapper select {
+        padding: 10px;
+      }
+      .form-wrapper button.cta-button {
+        padding: 12px 18px;
+        font-size: 1rem;
+        margin-top: 16px;
+      }
+    }
   </style>
 </head>
 
