@@ -35,6 +35,7 @@
       align-items: flex-start; 
       justify-content: center; 
       gap: 40px; 
+      flex-direction: row; /* Text left, image right */
     }
     #why .why-text { 
       flex: 1; 
@@ -43,6 +44,7 @@
       flex-direction: column; 
       justify-content: space-between; 
       margin-top: -80px; 
+      order: 1;
     }
     #why img { 
       flex: 1; 
@@ -51,6 +53,7 @@
       object-fit: contain; 
       align-self: flex-start; 
       margin-top: 0; 
+      order: 2;
     }
 
     /* Section 4: #what (desktop) */
@@ -61,7 +64,7 @@
       align-items: flex-start; 
       justify-content: center; 
       gap: 60px; 
-      flex-direction: row;
+      flex-direction: row; /* Icons left, text right */
     }
     #what .icons {
       display: grid;
@@ -74,9 +77,10 @@
       width: 270px;
       min-width: 0;
       box-sizing: border-box;
+      order: 1;
     }
     #what .icons img { width: 130px; height: auto; display: block; }
-    #what .what-text { max-width: 540px; }
+    #what .what-text { max-width: 540px; order: 2; }
     #what .what-text h2 { font-size: 28px; margin-bottom: 10px; }
     #what .what-text h3 { font-weight: 500; margin-top: 0; }
     #what .what-text ul { padding-left: 20px; }
@@ -166,8 +170,8 @@
       #why .why-text { order: 1; }
       #why img { order: 2; }
       #what { flex-direction: column; }
-      #what .what-text { order: 1; }
-      #what .icons { order: 2; }
+      #what .icons { order: 1; }
+      #what .what-text { order: 2; }
       /* Icons in 2x2 grid on mobile, full width */
       #what .icons {
         display: grid;
