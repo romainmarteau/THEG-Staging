@@ -219,7 +219,7 @@
       scroll-margin-top: 100px;
     }
 
-    .form-wrapper {
+     .form-wrapper {
       background-color: #FBF8EC;
       border-radius: 16px;
       padding: 20px 24px;
@@ -251,6 +251,16 @@
       font-style: italic;
     }
 
+    .form-wrapper select:invalid {
+      color: #aaa;
+      font-style: italic;
+    }
+
+    .form-wrapper select option {
+      color: black;
+      font-style: normal;
+    }
+
     .form-wrapper input,
     .form-wrapper select {
       margin-bottom: 16px;
@@ -261,7 +271,6 @@
       width: 100%;
       box-sizing: border-box;
       color: black;
-      
     }
 
     .form-wrapper button.cta-button {
