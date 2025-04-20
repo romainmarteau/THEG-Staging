@@ -167,8 +167,7 @@
               body: JSON.stringify(data)
             });
             if (response.ok) {
-              responseDiv.textContent = 'Thank you for joining! We will be in touch soon.';
-              form.reset();
+              window.location.href = "thank-you.html";
             } else {
               const error = await response.text();
               responseDiv.textContent = 'Submission failed: ' + error;
@@ -180,19 +179,19 @@
       </script>
     </section>
   </main>
-<!-- Google Maps and Places API script with your API key -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHVFmDwA6Om246blIpgskRD9OoPtlV674&libraries=places"></script>
-<script>
-  function initAutocomplete() {
-    const input = document.getElementById('address');
-    if (input) {
-      new google.maps.places.Autocomplete(input, {
-        types: ['geocode'],
-        componentRestrictions: { country: 'us' } // Optional: restrict to US
-      });
+  <!-- Google Maps and Places API script with your API key -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHVFmDwA6Om246blIpgskRD9OoPtlV674&libraries=places"></script>
+  <script>
+    function initAutocomplete() {
+      const input = document.getElementById('address');
+      if (input) {
+        new google.maps.places.Autocomplete(input, {
+          types: ['geocode'],
+          componentRestrictions: { country: 'us' }
+        });
+      }
     }
-  }
-  window.addEventListener('load', initAutocomplete);
-</script>
+    window.addEventListener('load', initAutocomplete);
+  </script>
 </body>
 </html>
