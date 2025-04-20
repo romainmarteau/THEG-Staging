@@ -180,5 +180,19 @@
       </script>
     </section>
   </main>
+<!-- Google Maps and Places API script with your API key -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHVFmDwA6Om246blIpgskRD9OoPtlV674&libraries=places"></script>
+<script>
+  function initAutocomplete() {
+    const input = document.getElementById('address');
+    if (input) {
+      new google.maps.places.Autocomplete(input, {
+        types: ['geocode'],
+        componentRestrictions: { country: 'us' } // Optional: restrict to US
+      });
+    }
+  }
+  window.addEventListener('load', initAutocomplete);
+</script>
 </body>
 </html>
