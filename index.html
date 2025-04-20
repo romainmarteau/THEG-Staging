@@ -61,14 +61,19 @@
       align-items: flex-start; 
       justify-content: center; 
       gap: 60px; 
+      flex-direction: row;
     }
     #what .icons {
       display: grid;
-      grid-template-columns: repeat(2, 130px); /* Always 2 columns */
+      grid-template-columns: 130px 130px;
+      grid-template-rows: 130px 130px;
       grid-gap: 40px 40px;
       align-content: start;
+      justify-content: start;
       padding-top: 60px;
-      justify-items: center;
+      width: 270px;
+      min-width: 0;
+      box-sizing: border-box;
     }
     #what .icons img { width: 130px; height: auto; display: block; }
     #what .what-text { max-width: 540px; }
@@ -131,6 +136,9 @@
       #why img, #what .icons { margin: 0 auto; display: block; }
       #why img, #what img { max-width: 100%; }
       #what { gap: 20px; }
+      #what .icons {
+        padding-top: 24px;
+      }
     }
     @media (max-width: 700px) {
       .hero-section { padding-top: 130px; }
@@ -160,15 +168,18 @@
       #what { flex-direction: column; }
       #what .what-text { order: 1; }
       #what .icons { order: 2; }
-      /* Icons in 2x2 grid on mobile */
+      /* Icons in 2x2 grid on mobile, full width */
       #what .icons {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns, fill available width */
-        grid-gap: 28px 12px;
-        justify-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-gap: 20px 12px;
         width: 100%;
+        min-width: 0;
+        justify-items: center;
         padding-top: 24px;
       }
-      #what .icons img { width: 92px; }
+      #what .icons img { width: 80px; }
     }
   </style>
 </head>
@@ -212,6 +223,12 @@
       <img src="horse_picture_v2.jpg" alt="Horse standing in a field">
     </section>
     <section id="what">
+      <div class="icons">
+        <img src="icon_people.png" alt="Community Icon">
+        <img src="icon_barn.png" alt="Barn Icon">
+        <img src="icon_calendar.png" alt="Calendar Icon">
+        <img src="icon_direction.png" alt="Signpost Icon">
+      </div>
       <div class="what-text">
         <h2>What We Do</h2>
         <h3>Building Strength Through Connection</h3>
@@ -223,12 +240,6 @@
           <li>Promote Equestrian Sports</li>
         </ul>
         <a href="#join" class="cta-button">Join the Group</a>
-      </div>
-      <div class="icons">
-        <img src="icon_people.png" alt="Community Icon">
-        <img src="icon_barn.png" alt="Barn Icon">
-        <img src="icon_calendar.png" alt="Calendar Icon">
-        <img src="icon_direction.png" alt="Signpost Icon">
       </div>
     </section>
     <section id="join">
@@ -292,4 +303,36 @@
           } catch (err) {
             responseDiv.textContent = 'Submission failed: ' + err.message;
           }
-       
+        });
+      </script>
+    </section>
+  </main>
+  <!-- Google Maps and Places API script with your API key -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHVFmDwA6Om246blIpgskRD9OoPtlV674&libraries=places"></script>
+  <script>
+    function initAutocomplete() {
+      const input = document.getElementById('address');
+      if (input) {
+        new google.maps.places.Autocomplete(input, {
+          types: ['geocode'],
+          componentRestrictions: { country: 'us' }
+        });
+      }
+    }
+    window.addEventListener('load', initAutocomplete);
+  </script>
+  <footer>
+    <div class="footer-block">
+      <h3>The Hampton Equestrian Group</h3>
+      <p>
+        A coalition of equestrians, property owners, professionals and enthusiasts
+        dedicated to developing, preserving, and promoting the horse industry on the East End
+      </p>
+    </div>
+    <div class="footer-block">
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:info@hamptonsequestrian.org">info@hamptonsequestrian.org</a></p>
+    </div>
+  </footer>
+</body>
+</html>
