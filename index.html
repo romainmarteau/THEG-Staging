@@ -26,23 +26,49 @@
     #who { background-color: #F5F2EA; padding: 80px 20px 20px; text-align: center; }
     #who img { max-width: 400px; width: 100%; height: auto; display: block; margin: 40px auto; }
 
-    /* Section 3: #why */
-    #why { background-color: #fff; padding: 130px 30px 80px; display: flex; flex-wrap: nowrap; align-items: flex-start; justify-content: center; gap: 40px; }
-    #why .why-text { flex: 1; max-width: 540px; display: flex; flex-direction: column; justify-content: space-between; margin-top: -80px; }
-    #why .why-text h2 { font-size: 28px; margin-bottom: 10px; }
-    #why .why-text h3 { font-weight: 500; margin-top: 0; }
-    #why .why-text ul { padding-left: 20px; }
-    #why .why-text li { margin-bottom: 10px; text-align: left; }
-    #why img { flex: 1; max-width: 400px; height: auto; object-fit: contain; align-self: flex-start; margin-top: 0; }
+    /* Section 3: #why (desktop) */
+    #why { 
+      background-color: #fff; 
+      padding: 130px 30px 80px; 
+      display: flex; 
+      flex-wrap: nowrap; 
+      align-items: flex-start; 
+      justify-content: center; 
+      gap: 40px; 
+    }
+    #why .why-text { 
+      flex: 1; 
+      max-width: 540px; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: space-between; 
+      margin-top: -80px; 
+    }
+    #why img { 
+      flex: 1; 
+      max-width: 400px; 
+      height: auto; 
+      object-fit: contain; 
+      align-self: flex-start; 
+      margin-top: 0; 
+    }
 
-    /* Section 4: #what */
-    #what { background-color: #F5F2EA; padding: 100px 30px 80px; display: flex; align-items: flex-start; justify-content: center; gap: 60px; }
+    /* Section 4: #what (desktop) */
+    #what { 
+      background-color: #F5F2EA; 
+      padding: 100px 30px 80px; 
+      display: flex; 
+      align-items: flex-start; 
+      justify-content: center; 
+      gap: 60px; 
+    }
     #what .icons {
       display: grid;
-      grid-template-columns: repeat(2, 130px);
+      grid-template-columns: repeat(2, 130px); /* Always 2 columns */
       grid-gap: 40px 40px;
       align-content: start;
       padding-top: 60px;
+      justify-items: center;
     }
     #what .icons img { width: 130px; height: auto; display: block; }
     #what .what-text { max-width: 540px; }
@@ -101,9 +127,9 @@
     /* Responsive for iOS and small screens */
     @media (max-width: 900px) {
       #why, #what { flex-direction: column; gap: 20px; }
-      #why img, #what img, #what .icons { margin: 0 auto; display: block; }
-      #why img, #what img { max-width: 100%; }
       #why .why-text, #what .what-text { margin-top: 0; }
+      #why img, #what .icons { margin: 0 auto; display: block; }
+      #why img, #what img { max-width: 100%; }
       #what { gap: 20px; }
     }
     @media (max-width: 700px) {
@@ -127,17 +153,19 @@
       main {
         padding: 30px 0 30px 0;
       }
-      /* Swap order for #why and #what: text first, then image/icons */
-      #why, #what { flex-direction: column !important; }
+      /* Only for small screens: swap order in #why and #what */
+      #why { flex-direction: column; }
       #why .why-text { order: 1; }
       #why img { order: 2; }
+      #what { flex-direction: column; }
       #what .what-text { order: 1; }
       #what .icons { order: 2; }
       /* Icons in 2x2 grid on mobile */
       #what .icons {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 columns, fill available width */
         grid-gap: 28px 12px;
         justify-items: center;
+        width: 100%;
         padding-top: 24px;
       }
       #what .icons img { width: 92px; }
@@ -264,36 +292,4 @@
           } catch (err) {
             responseDiv.textContent = 'Submission failed: ' + err.message;
           }
-        });
-      </script>
-    </section>
-  </main>
-  <!-- Google Maps and Places API script with your API key -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHVFmDwA6Om246blIpgskRD9OoPtlV674&libraries=places"></script>
-  <script>
-    function initAutocomplete() {
-      const input = document.getElementById('address');
-      if (input) {
-        new google.maps.places.Autocomplete(input, {
-          types: ['geocode'],
-          componentRestrictions: { country: 'us' }
-        });
-      }
-    }
-    window.addEventListener('load', initAutocomplete);
-  </script>
-  <footer>
-    <div class="footer-block">
-      <h3>The Hampton Equestrian Group</h3>
-      <p>
-        A coalition of equestrians, property owners, professionals and enthusiasts
-        dedicated to developing, preserving, and promoting the horse industry on the East End
-      </p>
-    </div>
-    <div class="footer-block">
-      <h3>Contact Us</h3>
-      <p>Email: <a href="mailto:info@hamptonsequestrian.org">info@hamptonsequestrian.org</a></p>
-    </div>
-  </footer>
-</body>
-</html>
+       
