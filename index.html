@@ -17,15 +17,30 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.1);
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: nowrap;        /* Prevent nav from wrapping under logo */
+      flex-wrap: nowrap;
       padding: 20px 30px;
       z-index: 1000;
       box-sizing: border-box;
+      /* For overlay */
+      background: none;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(30, 30, 30, 0.38); /* darker semi-transparent overlay */
+      z-index: 0;
+      pointer-events: none;
+      border-radius: 0;
+    }
+    header > * {
+      position: relative;
+      z-index: 1;
     }
     header img {
       width: 60px;
